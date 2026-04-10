@@ -198,3 +198,9 @@
 .min-h-dvh {
   min-height: 100dvh;
 }
+
+/* Africa Map: pulsing glow within country borders */
+@keyframes countryPulse {
+  0%, 100% { fill-opacity: 0.08; }
+  50% { fill-opacity: 0.35; }
+}
