@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'motion/react';
+import { motion, useSpring } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { HoverBorderButton } from '@/components/ui/HoverBorderButton';
@@ -29,9 +29,7 @@ export function Hero() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [cheetahX, cheetahY]);
 
-  const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  // Removed parallax scroll to fix mobile lag issues
 
   return (
     <section ref={heroRef} className="relative h-screen min-h-[800px] flex items-center overflow-hidden bg-[#0A0A1A]">
@@ -39,16 +37,10 @@ export function Hero() {
       <div className="absolute inset-0 z-0" aria-hidden="true">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0A1A]/50 to-[#0A0A1A] z-10" />
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(27,73,194,0.15),transparent_70%)]" />
-        <motion.div 
-          style={{ y: y1, opacity }}
-          className="absolute inset-0"
-        >
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
-        </motion.div>
-      </div>
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
 
-      {/* Africa Map */}
-      <div className="absolute right-[-5%] top-[15%] z-20 hidden lg:block w-[55%] pointer-events-none">
+      {/* Africa Map - Absolute on desktop, handled in flow for mobile later */}
+      <div className="absolute right-0 top-[15%] z-20 hidden lg:block w-[55%] xl:w-[50%] pointer-events-none opacity-90">
         <AfricaMap />
       </div>
 
@@ -115,6 +107,16 @@ export function Hero() {
                 </HoverBorderButton>
               </Link>
             </div>
+          </motion.div>
+
+          {/* Africa Map Mobile View */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="block lg:hidden w-full mt-16 pointer-events-none opacity-90 mx-auto"
+          >
+            <AfricaMap />
           </motion.div>
         </div>
       </div>

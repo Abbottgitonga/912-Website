@@ -27,6 +27,8 @@ interface HoverBorderButtonProps extends React.HTMLAttributes<HTMLElement> {
   duration?: number;
   clockwise?: boolean;
   variant?: 'blue' | 'orange';
+  /** Use 'light' on light backgrounds for visible dark text */
+  theme?: 'dark' | 'light';
 }
 
 export function HoverBorderButton({
@@ -37,6 +39,7 @@ export function HoverBorderButton({
   duration = 1,
   clockwise = true,
   variant = 'blue',
+  theme = 'dark',
   ...props
 }: HoverBorderButtonProps) {
   const [hovered, setHovered] = useState<boolean>(false);
@@ -67,14 +70,20 @@ export function HoverBorderButton({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={cn(
-        'relative flex h-min w-fit flex-col flex-nowrap content-center items-center justify-center gap-10 overflow-visible rounded-full border border-white/20 bg-black/40 box-decoration-clone p-px backdrop-blur-sm transition duration-500 hover:bg-black/60',
+        'relative flex h-min w-fit flex-col flex-nowrap content-center items-center justify-center gap-10 overflow-visible rounded-full border box-decoration-clone p-px backdrop-blur-sm transition duration-500',
+        theme === 'light'
+          ? 'border-slate-300 bg-white/40 hover:bg-white/60'
+          : 'border-white/20 bg-black/40 hover:bg-black/60',
         containerClassName
       )}
       {...props}
     >
       <div
         className={cn(
-          'z-10 w-auto rounded-[inherit] bg-brand-dark px-8 py-4 text-white font-bold text-lg',
+          'z-10 w-auto rounded-[inherit] px-8 py-4 font-bold text-lg',
+          theme === 'light'
+            ? 'bg-white text-brand-dark'
+            : 'bg-brand-dark text-white',
           className
         )}
       >
@@ -98,7 +107,10 @@ export function HoverBorderButton({
         }}
         transition={{ ease: 'linear', duration: duration ?? 1 }}
       />
-      <div className="absolute inset-[2px] z-[1] flex-none rounded-[100px] bg-brand-dark" />
+      <div className={cn(
+        'absolute inset-[2px] z-[1] flex-none rounded-[100px]',
+        theme === 'light' ? 'bg-white' : 'bg-brand-dark'
+      )} />
     </Element>
   );
 }

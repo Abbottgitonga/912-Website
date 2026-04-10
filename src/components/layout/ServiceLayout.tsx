@@ -157,25 +157,49 @@ export function ServiceLayout({
         "relative min-h-screen flex items-center overflow-hidden",
         theme === 'dark' ? "bg-brand-dark" : "bg-slate-50"
       )}>
-        {/* Background Elements */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          {hero.image && (
-            <img 
-              src={hero.image} 
-              alt={hero.title}
-              className="w-full h-full object-cover opacity-10 grayscale"
-            />
-          )}
+        {/* Professional Tech Background Elements */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          {/* Base Background */}
           <div className={cn(
-            "absolute inset-0",
-            theme === 'dark' 
-              ? "bg-gradient-to-b from-brand-dark via-brand-dark/95 to-brand-dark" 
-              : "bg-gradient-to-b from-slate-50/50 via-white to-white"
+            "absolute inset-0 transition-colors duration-1000",
+            theme === 'dark' ? "bg-brand-dark" : "bg-slate-50"
           )} />
           
-          {/* Animated background blobs */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-blue/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 animate-pulse" />
-          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-orange/5 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
+          {/* Subtle Grid overlay */}
+          <div 
+            className="absolute inset-0 opacity-[0.03]" 
+            style={{ 
+              backgroundImage: theme === 'dark' 
+                ? 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)' 
+                : 'linear-gradient(to right, #000000 1px, transparent 1px), linear-gradient(to bottom, #000000 1px, transparent 1px)',
+              backgroundSize: '4rem 4rem'
+            }} 
+          />
+          
+          {/* Elegant atmospheric glows */}
+          {theme === 'dark' && (
+            <>
+              <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-blue/10 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3" />
+              <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-orange/5 rounded-full blur-[150px] translate-y-1/3 -translate-x-1/3" />
+            </>
+          )}
+
+          {/* Original Image integration if provided, heavily overlayed */}
+          {hero.image && (
+            <div className="absolute inset-0 z-0">
+              <img 
+                src={hero.image} 
+                alt={hero.title}
+                className="w-full h-full object-cover opacity-20 grayscale mix-blend-overlay"
+              />
+              <div className={cn(
+                "absolute inset-0",
+                theme === 'dark' 
+                  ? "bg-gradient-to-r from-brand-dark via-brand-dark/95 to-brand-dark/80" 
+                  : "bg-gradient-to-r from-slate-50 via-slate-50/95 to-white/80"
+              )} />
+            </div>
+          )}
         </div>
 
         <div className="container mx-auto px-4 relative z-10 pt-32 pb-20">
@@ -203,15 +227,21 @@ export function ServiceLayout({
                   "text-6xl md:text-8xl font-heading font-black mb-8 leading-[0.9] tracking-tighter uppercase",
                   theme === 'dark' ? "text-white" : "text-brand-dark"
                 )}>
-                  {hero.title.split(' ').map((word, i) => (
-                    <span key={i} className="block">
-                      {word === 'Security' || word === 'Intelligence' || word === 'Recovery' || word === 'Cloud' ? (
-                        <span className="text-brand-blue">{word}</span>
-                      ) : word === 'Infrastructure' || word === 'Reporting' ? (
-                        <span className="text-brand-orange italic">{word}</span>
-                      ) : word}
-                    </span>
-                  ))}
+                  {hero.title.split(' ').map((word, i) => {
+                    const isOrange = word === 'Infrastructure' || word === 'Reporting' || word === 'Apps' || word === 'Software' || word === 'Custom';
+                    const isBlue = word === 'Security' || word === 'Intelligence' || word === 'Recovery' || word === 'Cloud';
+                    return (
+                      <span key={i} className="block">
+                        {isBlue ? (
+                          <span className="text-brand-blue">{word}</span>
+                        ) : isOrange ? (
+                          <span className="text-brand-orange italic">{word}</span>
+                        ) : (
+                          <span className="text-white">{word}</span>
+                        )}
+                      </span>
+                    );
+                  })}
                 </h1>
                 
                 <div className="flex items-center gap-4 mb-8">
@@ -530,6 +560,8 @@ export function ServiceLayout({
         </div>
       </section>
 
+      {children}
+
       {/* Outcomes Section — with animated stats */}
       <section className="py-24 bg-brand-blue text-white relative overflow-hidden">
         {/* Decorative background animation */}
@@ -566,7 +598,6 @@ export function ServiceLayout({
         </div>
       </section>
 
-      {children}
     </div>
   );
 }

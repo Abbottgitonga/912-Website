@@ -147,6 +147,7 @@
   /* Smooth scroll for anchor links (respects reduced-motion below) */
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
 
   /* §1 Accessibility: Visible focus rings on all interactive elements */

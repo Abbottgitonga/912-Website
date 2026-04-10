@@ -215,8 +215,8 @@ export default function ResultsPage() {
             what we'd do.
           </p>
           <Link to="/contact">
-            <HoverBorderButton variant="orange" containerClassName="border-slate-300">
-              <span className="!text-brand-dark">Book a Discovery Call</span>
+            <HoverBorderButton variant="orange" theme="light">
+              Book a Discovery Call
             </HoverBorderButton>
           </Link>
         </div>

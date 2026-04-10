@@ -33,6 +33,15 @@ const BackupRecoveryPage = React.lazy(() => import('@/pages/services/BackupRecov
 const CloudPage = React.lazy(() => import('@/pages/services/CloudPage'));
 const CCTVPage = React.lazy(() => import('@/pages/services/CCTVPage'));
 const PowerBIPage = React.lazy(() => import('@/pages/services/PowerBIPage'));
+const WebApplicationsPage = React.lazy(() => import('@/pages/services/WebApplicationsPage'));
+const MobileApplicationsPage = React.lazy(() => import('@/pages/services/MobileApplicationsPage'));
+const SaaSPlatformsPage = React.lazy(() => import('@/pages/services/SaaSPlatformsPage'));
+const ERPSystemsPage = React.lazy(() => import('@/pages/services/ERPSystemsPage'));
+const CybersecurityPage = React.lazy(() => import('@/pages/services/CybersecurityPage'));
+const IPTelephonyPage = React.lazy(() => import('@/pages/services/IPTelephonyPage'));
+const ElectricFencePage = React.lazy(() => import('@/pages/services/ElectricFencePage'));
+const StructuredCablingPage = React.lazy(() => import('@/pages/services/StructuredCablingPage'));
+const DataEngineeringPage = React.lazy(() => import('@/pages/services/DataEngineeringPage'));
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -67,36 +76,46 @@ const PlaceholderPage = ({ title }: { title: string }) => (
   </div>
 );
 
-// 404 page per copy deck
+// 404 page
 function NotFoundPage() {
   return (
-    <main className="pt-32 pb-20 min-h-[60vh]">
-      <div className="container mx-auto px-4">
-        <span className="text-brand-orange uppercase tracking-[0.4em] text-xs font-black mb-4 block">404</span>
-        <h1 className="text-5xl md:text-7xl font-heading font-bold text-brand-dark mb-6">
-          That page doesn't exist.
-        </h1>
-        <p className="text-xl text-slate-500 max-w-2xl mb-12">
-          It might have moved, it might have been renamed, or it might never have existed. Here are a few places that probably do.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mb-16">
-          {[
-            { title: 'The One Contract Model', desc: 'How 912 is structured differently from traditional IT vendors', href: '/about/one-contract' },
-            { title: 'Our Services', desc: 'Four pillars, fourteen services, one contract', href: '/services' },
-            { title: 'Case Studies', desc: 'Real outcomes with real numbers', href: '/results' },
-          ].map((item) => (
-            <Link key={item.href} to={item.href} className="p-8 bg-slate-50 border border-slate-200 hover:border-brand-blue transition-colors group">
-              <h3 className="text-lg font-heading font-bold text-brand-dark mb-2 group-hover:text-brand-blue transition-colors">{item.title}</h3>
-              <p className="text-sm text-slate-500">{item.desc}</p>
-              <ArrowRight className="w-4 h-4 text-brand-orange mt-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          ))}
+    <main className="flex min-h-[80vh] flex-col items-center justify-center p-4 pt-32 pb-20">
+      <div className="container mx-auto flex max-w-4xl flex-col items-center space-y-8 text-center">
+        {/* Large 404 Display */}
+        <div className="relative">
+          <h1 className="select-none font-heading text-[120px] sm:text-[180px] md:text-[240px] font-black leading-none tracking-tighter text-transparent"
+              style={{
+                WebkitTextStroke: '2px rgba(27, 73, 194, 0.1)',
+                backgroundImage: 'linear-gradient(to bottom, transparent, rgba(27, 73, 194, 0.05))',
+              }}>
+            404
+          </h1>
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <span className="text-brand-orange uppercase tracking-[0.4em] text-sm md:text-base font-black mb-4">
+              Page Not Found
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-brand-dark mb-4">
+              We couldn't find that page.
+            </h2>
+          </div>
         </div>
-        <div>
-          <h2 className="text-2xl font-heading font-bold text-brand-dark mb-4">Or just talk to us directly.</h2>
-          <Link to="/contact">
-            <HoverBorderButton variant="orange" containerClassName="border-slate-300">
-              <span className="!text-brand-dark">Book a Discovery Call</span>
+
+        {/* Description */}
+        <p className="text-lg md:text-xl text-slate-500 max-w-2xl leading-relaxed">
+          The page you're looking for doesn't exist or has been moved. 
+          Let's get you back on track to finding the right solution.
+        </p>
+
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-8">
+          <Link to="/" className="w-full sm:w-auto">
+            <HoverBorderButton variant="blue" className="w-full sm:w-auto justify-center">
+              Back to Homepage
+            </HoverBorderButton>
+          </Link>
+          <Link to="/services" className="w-full sm:w-auto">
+            <HoverBorderButton variant="orange" className="w-full sm:w-auto justify-center" theme="light">
+              Explore Our Services
             </HoverBorderButton>
           </Link>
         </div>
@@ -141,6 +160,15 @@ export default function App() {
               <Route path="/expertise/cloud" element={<CloudPage />} />
               <Route path="/expertise/cctv-&-surveillance" element={<CCTVPage />} />
               <Route path="/expertise/power-bi-&-reporting" element={<PowerBIPage />} />
+              <Route path="/expertise/web-applications" element={<WebApplicationsPage />} />
+              <Route path="/expertise/mobile-applications" element={<MobileApplicationsPage />} />
+              <Route path="/expertise/saas-platforms" element={<SaaSPlatformsPage />} />
+              <Route path="/expertise/erp-systems" element={<ERPSystemsPage />} />
+              <Route path="/expertise/cybersecurity" element={<CybersecurityPage />} />
+              <Route path="/expertise/ip-telephony" element={<IPTelephonyPage />} />
+              <Route path="/expertise/electric-fence" element={<ElectricFencePage />} />
+              <Route path="/expertise/structured-cabling" element={<StructuredCablingPage />} />
+              <Route path="/expertise/data-engineering" element={<DataEngineeringPage />} />
 
               {/* Case studies */}
               <Route path="/results" element={<ResultsPage />} />

@@ -89,8 +89,8 @@ export function CaseStudyLayout({
             <span className="text-brand-dark uppercase tracking-[0.3em] text-xs font-black mb-4 block">What this means for your business</span>
             <p className="text-xl text-slate-600 leading-relaxed mb-10">{whatThisMeans}</p>
             <Link to="/contact">
-              <HoverBorderButton variant="orange" containerClassName="border-slate-300">
-                <span className="!text-brand-dark">Book a Discovery Call</span>
+              <HoverBorderButton variant="orange" theme="light">
+                Book a Discovery Call
               </HoverBorderButton>
             </Link>
           </ScrollReveal>

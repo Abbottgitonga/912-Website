@@ -3,6 +3,34 @@ import { ServiceLayout } from '@/components/layout/ServiceLayout';
 import { Shield, Eye, Lock, Bell, Smartphone, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { ProjectShowcase } from '@/components/ui/ProjectShowcase';
+import { FAQSection } from '@/components/ui/FAQSection';
+
+const securityFaqs = [
+  { question: "What is a CCTV system and how does it work?", answer: "CCTV (Closed-Circuit Television) systems record and transmit video footage to a specific, limited set of monitors. Modern IP-based CCTV allows for AI-powered analytics, remote viewing, and cloud storage." },
+  { question: "How much does biometric access control cost?", answer: "Costs vary depending on the number of doors and users. Our access control solutions are scalable—starting from a single office door to multi-site, pan-African campus security systems, all managed from one platform." },
+  { question: "Do you offer remote monitoring?", answer: "Yes, our surveillance architectures enable secure, remote monitoring 24/7. Your security team can view live footage and receive instant alerts on mobile devices or centralized control rooms." },
+  { question: "Are your systems ODPC-compliant?", answer: "Yes. All our surveillance and access control data storage solutions are designed to be fully compliant with the Office of the Data Protection Commissioner (ODPC) regarding data residency and privacy." }
+];
+
+const securitySolutions = [
+  {
+    id: "access-control",
+    title: "Access Control",
+    description: "Comprehensive entry management and biometric solutions.",
+    href: "/expertise/access-control",
+    category: "Physical Security",
+    image: "https://images.unsplash.com/photo-1557597774-9d2739f8f01f?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    id: "cctv-surveillance",
+    title: "CCTV & Surveillance",
+    description: "AI-powered visual intelligence and remote monitoring.",
+    href: "/expertise/cctv-&-surveillance",
+    category: "Surveillance",
+    image: "https://images.unsplash.com/photo-1496368077930-c1e31b4e5b44?auto=format&fit=crop&q=80&w=800"
+  }
+];
 
 export default function PhysicalSecurityPage() {
   return (
@@ -100,25 +128,17 @@ export default function PhysicalSecurityPage() {
         ]
       }}
     >
-      <section className="py-24 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-heading font-bold mb-12 uppercase tracking-tight">Explore Specific Solutions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Link to="/expertise/access-control" className="group p-12 border border-gray-100 bg-gray-50 hover:border-brand-blue transition-all">
-              <Lock className="w-12 h-12 text-brand-blue mb-6 mx-auto group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-heading font-bold mb-4">Access Control</h3>
-              <p className="text-gray-500 mb-8">Comprehensive entry management and biometric solutions.</p>
-              <Button variant="outline" className="rounded-none border-brand-dark group-hover:bg-brand-dark group-hover:text-white">Learn More</Button>
-            </Link>
-            <Link to="/expertise/cctv-&-surveillance" className="group p-12 border border-gray-100 bg-gray-50 hover:border-brand-blue transition-all">
-              <Eye className="w-12 h-12 text-brand-orange mb-6 mx-auto group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-heading font-bold mb-4">CCTV & Surveillance</h3>
-              <p className="text-gray-500 mb-8">AI-powered visual intelligence and remote monitoring.</p>
-              <Button variant="outline" className="rounded-none border-brand-dark group-hover:bg-brand-dark group-hover:text-white">Learn More</Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ProjectShowcase 
+        items={securitySolutions} 
+        title="Explore Specific Solutions"
+        theme="light"
+      />
+      <FAQSection 
+        faqs={securityFaqs} 
+        title="Frequently Asked Questions" 
+        subtitle="Common questions about our Physical Security services"
+        theme="light"
+      />
     </ServiceLayout>
   );
 }

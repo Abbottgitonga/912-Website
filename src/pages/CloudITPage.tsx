@@ -3,6 +3,34 @@ import { ServiceLayout } from '@/components/layout/ServiceLayout';
 import { Cloud, Server, Shield, PhoneCall, Zap, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { ProjectShowcase } from '@/components/ui/ProjectShowcase';
+import { FAQSection } from '@/components/ui/FAQSection';
+
+const cloudFaqs = [
+  { question: "What is cloud migration?", answer: "Cloud migration involves moving your digital assets, services, databases, IT resources, and applications either partially, or wholly, into the cloud. It helps scale your business dynamically." },
+  { question: "How much does managed IT cost?", answer: "Managed IT costs depend on the number of users, complexity of your network, and the specific services required (like cybersecurity, backups, and 24/7 support). We offer transparent, predictable monthly pricing under our One Contract model." },
+  { question: "Is our data safe in the cloud?", answer: "Yes. Our cloud architectures implement Zero Trust security, regular penetration testing, automated backups, and strict access controls to ensure your data is more secure than on most on-premise servers." },
+  { question: "Do you support hybrid cloud environments?", answer: "Absolutely. We specialize in hybrid environments, allowing you to keep sensitive workloads on-premises while taking advantage of cloud scalability for other applications." }
+];
+
+const cloudSolutions = [
+  {
+    id: "cloud-solutions",
+    title: "Cloud Solutions",
+    description: "Scalable public, private, and hybrid cloud architectures.",
+    href: "/expertise/cloud",
+    category: "Infrastructure",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    id: "backup-recovery",
+    title: "Backup & Recovery",
+    description: "Business continuity and disaster recovery planning.",
+    href: "/expertise/backup-&-recovery",
+    category: "Resilience",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800"
+  }
+];
 
 export default function CloudITPage() {
   return (
@@ -100,25 +128,17 @@ export default function CloudITPage() {
         ]
       }}
     >
-      <section className="py-24 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-heading font-bold mb-12 uppercase tracking-tight">Explore Specific Solutions</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Link to="/expertise/cloud" className="group p-12 border border-gray-100 bg-gray-50 hover:border-brand-blue transition-all">
-              <Cloud className="w-12 h-12 text-brand-blue mb-6 mx-auto group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-heading font-bold mb-4">Cloud Solutions</h3>
-              <p className="text-gray-500 mb-8">Scalable public, private, and hybrid cloud architectures.</p>
-              <Button variant="outline" className="rounded-none border-brand-dark group-hover:bg-brand-dark group-hover:text-white">Learn More</Button>
-            </Link>
-            <Link to="/expertise/backup-&-recovery" className="group p-12 border border-gray-100 bg-gray-50 hover:border-brand-blue transition-all">
-              <Server className="w-12 h-12 text-brand-orange mb-6 mx-auto group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-heading font-bold mb-4">Backup & Recovery</h3>
-              <p className="text-gray-500 mb-8">Business continuity and disaster recovery planning.</p>
-              <Button variant="outline" className="rounded-none border-brand-dark group-hover:bg-brand-dark group-hover:text-white">Learn More</Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ProjectShowcase 
+        items={cloudSolutions} 
+        title="Explore Specific Solutions"
+        theme="light"
+      />
+      <FAQSection 
+        faqs={cloudFaqs} 
+        title="Frequently Asked Questions" 
+        subtitle="Common questions about our Cloud & Core IT services"
+        theme="light"
+      />
     </ServiceLayout>
   );
 }

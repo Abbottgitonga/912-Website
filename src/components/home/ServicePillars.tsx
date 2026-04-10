@@ -72,7 +72,7 @@ export function ServicePillars() {
                   width={800}
                   height={600}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover opacity-40 grayscale group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-700"
+                  className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay grayscale group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-700"
                   whileHover={{ scale: 1.05 }}
                 />
                 
@@ -83,7 +83,7 @@ export function ServicePillars() {
                   </div>
                   
                   <div>
-                    <h3 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6 group-hover:text-brand-orange transition-colors leading-tight uppercase">
+                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-6 group-hover:text-brand-orange transition-colors leading-tight uppercase">
                       {pillar.title}
                     </h3>
                     <p className="text-white/60 text-lg leading-relaxed max-w-md opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
@@ -92,7 +92,7 @@ export function ServicePillars() {
                   </div>
                 </div>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/20 to-transparent z-10" aria-hidden="true" />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-transparent z-10" aria-hidden="true" />
               </Link>
             </ScrollReveal>
           ))}

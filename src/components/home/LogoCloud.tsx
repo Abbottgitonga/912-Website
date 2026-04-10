@@ -8,11 +8,10 @@ const logos = [
   { src: '/logos/magnate.png', alt: 'Magnate Ventures', width: 140 },
   { src: '/logos/capitol.png', alt: 'Capitol Printers', width: 140 },
   { src: '/logos/insignia.png', alt: 'Insignia Group', width: 120 },
-  // Text-only placeholders for logos not yet provided as images
-  { text: 'TRM', alt: 'TRM' },
-  { text: 'MEDS', alt: 'MEDS' },
-  { text: 'Fresha', alt: 'Fresha' },
-  { text: 'Tononoka', alt: 'Tononoka' },
+  { src: '/logos/trm.svg', alt: 'TRM', width: 100 },
+  { src: '/logos/meds.svg', alt: 'MEDS', width: 110 },
+  { src: '/logos/fresha.svg', alt: 'Fresha', width: 120 },
+  { src: '/logos/tononoka.svg', alt: 'Tononoka', width: 150 },
 ];
 
 interface LogoCloudProps {

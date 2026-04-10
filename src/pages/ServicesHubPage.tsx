@@ -144,8 +144,8 @@ export default function ServicesHubPage() {
             A 20-minute Discovery Call. We map your current vendors against the four pillars, identify where you're overlapping, where you're exposed, and where consolidation would save the most.
           </p>
           <Link to="/contact">
-            <HoverBorderButton variant="orange" containerClassName="border-slate-300">
-              <span className="!text-brand-dark">Book a Discovery Call</span>
+            <HoverBorderButton variant="orange" theme="light">
+              Book a Discovery Call
             </HoverBorderButton>
           </Link>
         </div>

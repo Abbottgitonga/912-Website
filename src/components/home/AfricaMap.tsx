@@ -189,8 +189,8 @@ export function AfricaMap({ variant = 'hero' }: AfricaMapProps) {
       if (isOperating) {
         return {
           default: {
-            fill: isHero ? 'rgba(255, 122, 0, 0.12)' : 'rgba(255, 122, 0, 0.08)',
-            stroke: isHero ? 'rgba(255, 122, 0, 0.3)' : 'rgba(255, 122, 0, 0.2)',
+            fill: isHero ? 'rgba(255, 122, 0, 0.2)' : 'rgba(255, 122, 0, 0.08)',
+            stroke: isHero ? 'rgba(255, 122, 0, 0.5)' : 'rgba(255, 122, 0, 0.2)',
             strokeWidth: 0.8,
             transition: 'all 0.6s ease',
             outline: 'none',
@@ -213,8 +213,8 @@ export function AfricaMap({ variant = 'hero' }: AfricaMapProps) {
       // Non-operating African countries
       return {
         default: {
-          fill: isHero ? 'rgba(255, 255, 255, 0.04)' : 'rgba(148, 163, 184, 0.15)',
-          stroke: isHero ? 'rgba(255, 255, 255, 0.12)' : 'rgba(148, 163, 184, 0.3)',
+          fill: isHero ? 'rgba(255, 255, 255, 0.08)' : 'rgba(148, 163, 184, 0.15)',
+          stroke: isHero ? 'rgba(255, 255, 255, 0.25)' : 'rgba(148, 163, 184, 0.3)',
           strokeWidth: 0.5,
           transition: 'all 0.6s ease',
           outline: 'none',

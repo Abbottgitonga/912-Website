@@ -3,6 +3,34 @@ import { ServiceLayout } from '@/components/layout/ServiceLayout';
 import { BarChart3, LineChart, Database, PieChart, Search, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { ProjectShowcase } from '@/components/ui/ProjectShowcase';
+import { FAQSection } from '@/components/ui/FAQSection';
+
+const dataFaqs = [
+  { question: "What is Power BI and why do we need it?", answer: "Power BI is a business analytics service by Microsoft. It lets you visualize your data and share insights across your organization, or embed them in your app or website. It replaces static Excel reports with real-time, interactive dashboards." },
+  { question: "Can you connect to our existing ERP or software?", answer: "Yes. Our data engineers specialize in building ETL (Extract, Transform, Load) pipelines that pull data securely from almost any system—including SAP, Microsoft Dynamics, Navision, Sage, or custom SQL databases." },
+  { question: "What is a data warehouse?", answer: "A data warehouse is a central repository where data from multiple sources is consolidated and optimized for reporting and analysis. It ensures your dashboards run instantly without slowing down your live operational systems." },
+  { question: "How long does it take to see the first dashboard?", answer: "Once we have secure access to your raw data, we typically deliver the first iteration of your Power BI dashboard within 2-4 weeks, allowing leadership to start making data-driven decisions almost immediately." }
+];
+
+const dataSolutions = [
+  {
+    id: "power-bi-reporting",
+    title: "Power BI & Reporting",
+    description: "Custom dashboards and automated reporting for enterprise leadership.",
+    href: "/expertise/power-bi-&-reporting",
+    category: "Analytics",
+    image: "https://images.unsplash.com/photo-1551288049-bbbda50a13a9?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    id: "data-engineering",
+    title: "Data Engineering",
+    description: "Robust data warehousing and ETL pipeline automation.",
+    href: "/expertise/data-engineering",
+    category: "Architecture",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800"
+  }
+];
 
 export default function DataIntelligencePage() {
   return (
@@ -100,19 +128,17 @@ export default function DataIntelligencePage() {
         ]
       }}
     >
-      <section className="py-24 bg-white border-t border-gray-100">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-heading font-bold mb-12 uppercase tracking-tight">Explore Specific Solutions</h2>
-          <div className="grid grid-cols-1 max-w-2xl mx-auto">
-            <Link to="/expertise/power-bi-&-reporting" className="group p-12 border border-gray-100 bg-gray-50 hover:border-brand-blue transition-all">
-              <BarChart3 className="w-12 h-12 text-brand-blue mb-6 mx-auto group-hover:scale-110 transition-transform" />
-              <h3 className="text-2xl font-heading font-bold mb-4">Power BI & Reporting</h3>
-              <p className="text-gray-500 mb-8">Custom dashboards and automated reporting for enterprise leadership.</p>
-              <Button variant="outline" className="rounded-none border-brand-dark group-hover:bg-brand-dark group-hover:text-white">Learn More</Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ProjectShowcase 
+        items={dataSolutions} 
+        title="Explore Specific Solutions"
+        theme="light"
+      />
+      <FAQSection 
+        faqs={dataFaqs} 
+        title="Frequently Asked Questions" 
+        subtitle="Common questions about our Data & Intelligence services"
+        theme="light"
+      />
     </ServiceLayout>
   );
 }

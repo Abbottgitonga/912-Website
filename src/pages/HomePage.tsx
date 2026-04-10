@@ -8,6 +8,14 @@ import { ScrollReveal } from '@/components/layout/ScrollReveal';
 import { AfricaMap } from '@/components/home/AfricaMap';
 import { ArrowRight } from 'lucide-react';
 import { Testimonials } from '@/components/home/Testimonials';
+import { FAQSection } from '@/components/ui/FAQSection';
+
+const homeFaqs = [
+  { question: "What exactly is the One Contract Model?", answer: "Instead of managing separate vendors for CCTV, cloud, cybersecurity, and software, 912 provides a single comprehensive contract covering all your technology needs. One team, one point of contact, and full accountability." },
+  { question: "Do you only work with large enterprises?", answer: "We support mid-sized to large enterprises across 10 African countries. Our model is highly effective for any business that relies on technology for daily operations and wants enterprise-grade security and support." },
+  { question: "How does the onboarding process work?", answer: "We start with a comprehensive IT audit to identify gaps, overlapping services, and cost-saving opportunities. Then, we design a consolidated blueprint and seamlessly migrate your services without operational downtime." },
+  { question: "Can we keep some of our existing IT vendors?", answer: "We can work alongside existing vendors during a transition phase, but the true value—including faster response times and cost savings—is achieved when 912 fully manages and documents the complete technology stack." },
+];
 
 export default function HomePage() {
   return (
@@ -48,7 +56,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Testimonials />
+
       <OneContractModel />
       <ServicePillars />
       
@@ -110,6 +118,14 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <Testimonials />
+
+      <FAQSection 
+        faqs={homeFaqs} 
+        title="Common Questions" 
+        subtitle="Understanding how the 912 model works for your business"
+      />
     </main>
   );
 }
