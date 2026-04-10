@@ -1,5 +1,6 @@
 import React from 'react';
 import { ScrollReveal } from '@/components/layout/ScrollReveal';
+import { AfricaMap } from '@/components/home/AfricaMap';
 import { Shield, Target, Heart, Award, Users, Globe } from 'lucide-react';
 
 const values = [
@@ -104,19 +105,10 @@ export default function AboutPage() {
               With headquarters in Nairobi and a presence across 10+ countries, 
               we are strategically positioned to support your growth across the continent.
             </p>
-            <div className="relative inline-block">
-              <img 
-                src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=1000" 
-                alt="Africa Map Concept" 
-                className="max-w-4xl w-full opacity-20 grayscale"
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16">
-                  {["Kenya", "Angola", "DRC", "Senegal", "Mali", "Tanzania", "Rwanda", "Burundi"].map((country) => (
-                    <div key={country} className="text-2xl font-heading font-bold text-brand-blue">{country}</div>
-                  ))}
-                </div>
-              </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 md:p-12">
+              <AfricaMap variant="page" />
             </div>
           </ScrollReveal>
         </div>

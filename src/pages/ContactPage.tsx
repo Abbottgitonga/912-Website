@@ -95,23 +95,23 @@ export default function ContactPage() {
                   <form className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <label className="text-xs uppercase tracking-widest font-bold text-slate-400">First Name</label>
-                        <input type="text" className="w-full bg-white border border-slate-200 p-4 focus:border-brand-blue outline-none transition-colors" placeholder="John" />
+                        <label htmlFor="contact-first-name" className="text-xs uppercase tracking-widest font-bold text-slate-400">First Name <span className="text-red-500" aria-hidden="true">*</span></label>
+                        <input id="contact-first-name" name="firstName" type="text" autoComplete="given-name" required className="w-full bg-white border border-slate-200 p-4 focus:border-brand-blue outline-none transition-colors" placeholder="John" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-xs uppercase tracking-widest font-bold text-slate-400">Last Name</label>
-                        <input type="text" className="w-full bg-white border border-slate-200 p-4 focus:border-brand-blue outline-none transition-colors" placeholder="Doe" />
+                        <label htmlFor="contact-last-name" className="text-xs uppercase tracking-widest font-bold text-slate-400">Last Name <span className="text-red-500" aria-hidden="true">*</span></label>
+                        <input id="contact-last-name" name="lastName" type="text" autoComplete="family-name" required className="w-full bg-white border border-slate-200 p-4 focus:border-brand-blue outline-none transition-colors" placeholder="Doe" />
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs uppercase tracking-widest font-bold text-slate-400">Email Address</label>
-                      <input type="email" className="w-full bg-white border border-slate-200 p-4 focus:border-brand-blue outline-none transition-colors" placeholder="john@company.com" />
+                      <label htmlFor="contact-email" className="text-xs uppercase tracking-widest font-bold text-slate-400">Email Address <span className="text-red-500" aria-hidden="true">*</span></label>
+                      <input id="contact-email" name="email" type="email" autoComplete="email" required className="w-full bg-white border border-slate-200 p-4 focus:border-brand-blue outline-none transition-colors" placeholder="john@company.com" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs uppercase tracking-widest font-bold text-slate-400">Message</label>
-                      <textarea className="w-full bg-white border border-slate-200 p-4 h-32 focus:border-brand-blue outline-none transition-colors" placeholder="How can we help you?"></textarea>
+                      <label htmlFor="contact-message" className="text-xs uppercase tracking-widest font-bold text-slate-400">Message <span className="text-red-500" aria-hidden="true">*</span></label>
+                      <textarea id="contact-message" name="message" required className="w-full bg-white border border-slate-200 p-4 h-32 focus:border-brand-blue outline-none transition-colors" placeholder="How can we help you?"></textarea>
                     </div>
-                    <Button className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white rounded-none py-8 text-lg">
+                    <Button type="submit" className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white rounded-none py-8 text-lg">
                       Send Message
                     </Button>
                   </form>
@@ -145,7 +145,10 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-brand-blue/10 z-10 pointer-events-none" />
         <img 
           src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=2000" 
-          alt="Map Location" 
+          alt="Aerial view of Nairobi, Kenya — location of 912 headquarters" 
+          loading="lazy"
+          width="2000"
+          height="500"
           className="w-full h-full object-cover grayscale opacity-50"
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">

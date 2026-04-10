@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -98,13 +99,13 @@ export function Hero() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="bg-brand-blue hover:bg-brand-blue/90 text-white rounded-none px-10 py-8 text-lg font-bold group">
-                <a href="/expertise">
+                <Link to="/expertise">
                   Our Pillars
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+                </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white/10 text-white hover:bg-white/5 rounded-none px-10 py-8 text-lg font-bold">
-                <a href="/about/one-contract">One Contract</a>
+                <Link to="/about/one-contract">One Contract</Link>
               </Button>
             </div>
           </motion.div>

@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+/* font-display: swap is set via the display=swap URL param above — prevents FOIT */
 
 @custom-variant dark (&:is(.dark *));
 
@@ -126,12 +127,36 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    }
+  }
   body {
     @apply bg-background text-foreground font-sans;
-    }
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+  }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading tracking-tight;
+  }
+
+  /* §1 Accessibility: Visible focus rings on all interactive elements */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-blue;
+  }
+
+  /* §2 Interaction: cursor-pointer on all clickable elements */
+  a, button, [role="button"], select, summary,
+  input[type="submit"], input[type="button"], input[type="reset"] {
+    cursor: pointer;
+  }
+
+  /* §8 Forms: Focus ring for form inputs */
+  input:not([type="submit"]):not([type="button"]):not([type="reset"]),
+  textarea, select {
+    @apply transition-colors duration-200;
+  }
+  input:not([type="submit"]):not([type="button"]):not([type="reset"]):focus-visible,
+  textarea:focus-visible, select:focus-visible {
+    @apply outline-2 outline-offset-0 outline-brand-blue border-brand-blue;
   }
 }
 
@@ -152,4 +177,24 @@
 
 .glass-card {
   @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+/* §7 Animation: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .slide-fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* §5 Layout: dvh utility for mobile viewport */
+.min-h-dvh {
+  min-height: 100dvh;
 }

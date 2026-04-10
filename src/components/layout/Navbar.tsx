@@ -67,17 +67,6 @@ export function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="relative w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center overflow-hidden">
-              <motion.div 
-                className="absolute inset-0 bg-white/20"
-                animate={{
-                  x: ["-100%", "100%"],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
-              />
               <span className="text-white font-bold text-xl relative z-10">912</span>
             </div>
             <div className="flex flex-col">
@@ -87,7 +76,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -167,11 +156,11 @@ export function Navbar() {
             </NavigationMenu>
 
             <div className="flex items-center gap-4 border-l pl-8 border-border/50">
-              <button className="p-2 hover:text-brand-orange transition-colors">
-                <Search className="w-5 h-5" />
+              <button className="p-2 hover:text-brand-orange transition-colors" aria-label="Search">
+                <Search className="w-5 h-5" aria-hidden="true" />
               </button>
-              <button className="flex items-center gap-1 text-sm font-medium hover:text-brand-orange transition-colors">
-                <Globe className="w-4 h-4" />
+              <button className="flex items-center gap-1 text-sm font-medium hover:text-brand-orange transition-colors" aria-label="Select region">
+                <Globe className="w-4 h-4" aria-hidden="true" />
                 <span>Global</span>
               </button>
               <Button asChild className="bg-brand-blue hover:bg-brand-blue/90 text-white rounded-none px-6">
@@ -182,10 +171,13 @@ export function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="lg:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-foreground min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
-            {isMobileMenuOpen ? <X /> : <Menu />}
+            {isMobileMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
           </button>
         </div>
       </div>
@@ -198,6 +190,9 @@ export function Navbar() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             className="lg:hidden absolute top-24 left-0 right-0 bg-white/95 dark:bg-brand-dark/95 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl overflow-hidden mx-4"
+            id="mobile-navigation"
+            role="navigation"
+            aria-label="Mobile navigation"
           >
             <div className="px-6 py-8 space-y-6">
               <div className="space-y-4">
