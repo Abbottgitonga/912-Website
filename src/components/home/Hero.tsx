@@ -104,9 +104,12 @@ export function Hero() {
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white/10 text-white hover:bg-white/5 rounded-none px-10 py-8 text-lg font-bold">
-                <Link to="/about/one-contract">One Contract</Link>
-              </Button>
+              <Link
+                to="/about/one-contract"
+                className="inline-flex items-center justify-center border border-white/20 bg-transparent text-white hover:bg-white/10 rounded-none px-10 py-4 text-lg font-bold transition-colors"
+              >
+                One Contract
+              </Link>
             </div>
           </motion.div>
         </div>

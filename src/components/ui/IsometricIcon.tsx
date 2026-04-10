@@ -75,17 +75,20 @@ export function IsometricIcon({ type, className = "" }: IsometricIconProps) {
             />
             <motion.rect
               x="30" y="60" width="10" height="20" fill="currentColor"
-              animate={{ height: [10, 30, 10] }}
+              style={{ originY: 1 }}
+              animate={{ scaleY: [0.5, 1.5, 0.5] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
             <motion.rect
               x="45" y="50" width="10" height="30" fill="currentColor"
-              animate={{ height: [20, 40, 20] }}
+              style={{ originY: 1 }}
+              animate={{ scaleY: [0.67, 1.33, 0.67] }}
               transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
             />
             <motion.rect
               x="60" y="40" width="10" height="40" fill="currentColor"
-              animate={{ height: [30, 50, 30] }}
+              style={{ originY: 1 }}
+              animate={{ scaleY: [0.75, 1.25, 0.75] }}
               transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
             />
           </svg>
