@@ -10,13 +10,13 @@ export function AboutSection() {
             <ScrollReveal direction="right">
               <div className="flex items-center gap-4 mb-12">
                 <span className="text-brand-blue uppercase tracking-[0.4em] text-xs font-black">Our Philosophy</span>
-                <span className="h-[1px] w-12 bg-brand-blue/20" />
+                <span className="h-[1px] w-12 bg-brand-blue/20" aria-hidden="true" />
               </div>
               <h2 className="text-5xl md:text-7xl font-heading font-bold text-brand-dark leading-[0.9] tracking-tighter mb-8">
                 FROM VISION <br />
                 <span className="text-brand-orange italic">TO FRUITION.</span>
               </h2>
-              <div className="w-24 h-2 bg-brand-blue mb-12" />
+              <div className="w-24 h-2 bg-brand-blue mb-12" aria-hidden="true" />
             </ScrollReveal>
           </div>
           

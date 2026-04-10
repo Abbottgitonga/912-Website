@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ScrollReveal } from '@/components/layout/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -47,10 +48,10 @@ export function LatestNews() {
           </ScrollReveal>
           <ScrollReveal direction="left">
             <Button asChild variant="outline" className="border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white rounded-none px-8 py-6 text-lg font-bold group">
-              <a href="/news">
+              <Link to="/resources">
                 All News
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
+              </Link>
             </Button>
           </ScrollReveal>
         </div>
@@ -62,7 +63,10 @@ export function LatestNews() {
                 <div className="relative aspect-[4/5] overflow-hidden mb-8 bg-slate-100">
                   <img 
                     src={item.image} 
-                    alt={item.title}
+                    alt=""
+                    width={800}
+                    height={1000}
+                    loading="lazy"
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                   />
                   <div className="absolute top-6 left-6 bg-brand-blue text-white text-[10px] uppercase tracking-[0.3em] font-black px-4 py-2">
@@ -73,7 +77,7 @@ export function LatestNews() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-4 text-xs font-black uppercase tracking-widest text-slate-400">
                     <span>{item.date}</span>
-                    <span className="w-1 h-1 bg-brand-orange rounded-full" />
+                    <span className="w-1 h-1 bg-brand-orange rounded-full" aria-hidden="true" />
                     <span className="text-brand-blue">{item.tag}</span>
                   </div>
                   <h4 className="text-2xl font-heading font-bold text-brand-dark group-hover:text-brand-blue transition-colors leading-tight">
@@ -84,7 +88,7 @@ export function LatestNews() {
                   </p>
                   <div className="pt-4 flex items-center text-brand-dark font-black text-xs uppercase tracking-widest group-hover:text-brand-orange transition-colors">
                     Read Story
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </div>
                 </div>
               </div>

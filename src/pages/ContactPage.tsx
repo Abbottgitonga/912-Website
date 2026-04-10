@@ -141,7 +141,7 @@ export default function ContactPage() {
       </section>
 
       {/* Map */}
-      <section className="h-[500px] bg-slate-200 relative overflow-hidden">
+      <section aria-label="Office location" className="h-[500px] bg-slate-200 relative overflow-hidden">
         <div className="absolute inset-0 bg-brand-blue/10 z-10 pointer-events-none" />
         <img 
           src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&q=80&w=2000" 
@@ -151,7 +151,7 @@ export default function ContactPage() {
           height="500"
           className="w-full h-full object-cover grayscale opacity-50"
         />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20" aria-hidden="true">
           <div className="w-8 h-8 bg-brand-orange rounded-full animate-ping absolute" />
           <div className="w-8 h-8 bg-brand-orange rounded-full relative flex items-center justify-center shadow-lg">
             <div className="w-3 h-3 bg-white rounded-full" />

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, ChevronDown, Search, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -13,27 +13,18 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
-const expertiseItems = [
-  {
-    title: "Service Pillars",
-    items: [
-      "Physical & Security Infrastructure",
-      "Cloud & Core IT",
-      "Applications & Software",
-      "Data & Intelligence",
-    ]
-  },
-  {
-    title: "Key Solutions",
-    items: [
-      "Access Control",
-      "Backup & Recovery",
-      "Cloud",
-      "CCTV & Surveillance",
-      "Power BI & Reporting",
-      "Corporate IT Maintenance",
-    ]
-  }
+const serviceItems = [
+  { title: "Physical & Security Infrastructure", href: "/services/physical-security-infrastructure" },
+  { title: "Cloud & Core IT", href: "/services/cloud-core-it" },
+  { title: "Applications & Software", href: "/services/applications-software" },
+  { title: "Data & Intelligence", href: "/services/data-intelligence" },
+];
+
+const aboutItems = [
+  { title: "Our Story", href: "/about" },
+  { title: "The One Contract Model", href: "/about/one-contract", highlight: true },
+  { title: "Our Team", href: "/about/team" },
+  { title: "Get in Touch", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -71,100 +62,94 @@ export function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="font-heading font-bold text-lg leading-none text-brand-blue">NINE ONE TWO</span>
-              <span className="text-[8px] uppercase tracking-[0.2em] font-medium opacity-70">Infinite Possibilities</span>
+              <span className="text-[8px] uppercase tracking-[0.2em] font-medium opacity-70">One Contract. Every Technology Need.</span>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-6" aria-label="Main navigation">
             <NavigationMenu>
               <NavigationMenuList>
+                {/* Services dropdown */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent font-medium">
-                    Expertise
+                    Services
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid grid-cols-2 w-[600px] p-6 gap-8">
-                      {expertiseItems.map((section) => (
-                        <div key={section.title}>
-                          <h4 className="font-heading font-bold text-brand-blue mb-4 uppercase text-xs tracking-wider">
-                            {section.title}
-                          </h4>
-                          <ul className="space-y-2">
-                            {section.items.map((item) => (
-                              <li key={item}>
-                                <NavigationMenuLink asChild>
-                                  <Link 
-                                    to={`/expertise/${item.toLowerCase().replace(/ /g, '-').replace(/&/g, '%26')}`}
-                                    className="text-sm hover:text-brand-orange transition-colors block py-1"
-                                  >
-                                    {item}
-                                  </Link>
-                                </NavigationMenuLink>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+                    <div className="w-[320px] p-4">
+                      <h4 className="font-heading font-bold text-brand-blue mb-3 uppercase text-xs tracking-wider">
+                        The Four Pillars
+                      </h4>
+                      <ul className="space-y-1">
+                        {serviceItems.map((item) => (
+                          <li key={item.href}>
+                            <NavigationMenuLink asChild>
+                              <Link 
+                                to={item.href}
+                                className="text-sm hover:text-brand-orange transition-colors block py-2 px-3 rounded-lg hover:bg-slate-50"
+                              >
+                                {item.title}
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="border-t border-slate-100 mt-3 pt-3">
+                        <Link to="/services" className="text-xs font-bold text-brand-blue hover:text-brand-orange transition-colors uppercase tracking-wider">
+                          View All Services
+                        </Link>
+                      </div>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-                
+
+                {/* Case Studies */}
                 <NavigationMenuItem>
-                  <Link to="/people" className="text-sm font-medium hover:text-brand-orange transition-colors px-4">
-                    People
+                  <Link to="/results" className="text-sm font-medium hover:text-brand-orange transition-colors px-4">
+                    Case Studies
                   </Link>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent font-medium">
-                    News
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-[200px] p-4">
-                      <ul className="space-y-2">
-                        <li><Link to="/news" className="text-sm hover:text-brand-orange transition-colors block py-1">All News</Link></li>
-                        <li><Link to="/news/podcasts" className="text-sm hover:text-brand-orange transition-colors block py-1">Podcast Hub</Link></li>
-                        <li><Link to="/news/videos" className="text-sm hover:text-brand-orange transition-colors block py-1">Video Hub</Link></li>
-                      </ul>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
+                {/* About dropdown */}
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent font-medium">
                     About
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[240px] p-4">
-                      <ul className="space-y-2">
-                        <li><Link to="/about" className="text-sm hover:text-brand-orange transition-colors block py-1">About Us</Link></li>
-                        <li><Link to="/about/history" className="text-sm hover:text-brand-orange transition-colors block py-1">Our History</Link></li>
-                        <li><Link to="/about/one-contract" className="text-sm hover:text-brand-orange transition-colors block py-1 font-bold text-brand-blue">The One Contract Model</Link></li>
-                        <li><Link to="/about/africa" className="text-sm hover:text-brand-orange transition-colors block py-1">Geographic Reach</Link></li>
+                      <ul className="space-y-1">
+                        {aboutItems.map((item) => (
+                          <li key={item.href}>
+                            <NavigationMenuLink asChild>
+                              <Link 
+                                to={item.href}
+                                className={cn(
+                                  "text-sm hover:text-brand-orange transition-colors block py-2 px-3 rounded-lg hover:bg-slate-50",
+                                  item.highlight && "font-bold text-brand-blue"
+                                )}
+                              >
+                                {item.title}
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
+                {/* Resources */}
                 <NavigationMenuItem>
-                  <Link to="/careers" className="text-sm font-medium hover:text-brand-orange transition-colors px-4">
-                    Careers
+                  <Link to="/resources" className="text-sm font-medium hover:text-brand-orange transition-colors px-4">
+                    Resources
                   </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
 
-            <div className="flex items-center gap-4 border-l pl-8 border-border/50">
-              <button className="p-2 hover:text-brand-orange transition-colors" aria-label="Search">
-                <Search className="w-5 h-5" aria-hidden="true" />
-              </button>
-              <button className="flex items-center gap-1 text-sm font-medium hover:text-brand-orange transition-colors" aria-label="Select region">
-                <Globe className="w-4 h-4" aria-hidden="true" />
-                <span>Global</span>
-              </button>
-              <Button asChild className="bg-brand-blue hover:bg-brand-blue/90 text-white rounded-none px-6">
-                <Link to="/contact">Contact</Link>
+            <div className="flex items-center gap-4 border-l pl-6 border-border/50">
+              <Button asChild className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-none px-6">
+                <Link to="/contact">Book a Discovery Call</Link>
               </Button>
             </div>
           </nav>
@@ -195,19 +180,32 @@ export function Navbar() {
             aria-label="Mobile navigation"
           >
             <div className="px-6 py-8 space-y-6">
-              <div className="space-y-4">
-                <h4 className="font-heading font-bold text-brand-blue uppercase text-xs tracking-wider">Navigation</h4>
-                <ul className="space-y-4">
-                  <li><Link to="/expertise/physical-&-security-infrastructure" className="text-lg font-bold block hover:text-brand-orange transition-colors">Physical & Security</Link></li>
-                  <li><Link to="/expertise/cloud-&-core-it" className="text-lg font-bold block hover:text-brand-orange transition-colors">Cloud & Core IT</Link></li>
-                  <li><Link to="/expertise/applications-&-software" className="text-lg font-bold block hover:text-brand-orange transition-colors">Apps & Software</Link></li>
-                  <li><Link to="/expertise/data-&-intelligence" className="text-lg font-bold block hover:text-brand-orange transition-colors">Data & Intelligence</Link></li>
-                  <li><Link to="/about" className="text-lg font-bold block hover:text-brand-orange transition-colors">About Us</Link></li>
-                  <li><Link to="/about/one-contract" className="text-lg font-bold block text-brand-orange">One Contract Model</Link></li>
+              {/* Services */}
+              <div className="space-y-3">
+                <h4 className="font-heading font-bold text-brand-blue uppercase text-xs tracking-wider">Services</h4>
+                <ul className="space-y-3">
+                  {serviceItems.map((item) => (
+                    <li key={item.href}>
+                      <Link to={item.href} className="text-base font-medium block hover:text-brand-orange transition-colors">
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
-              <Button asChild className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white rounded-xl py-6 text-lg font-bold">
-                <Link to="/contact">Contact Us</Link>
+              {/* Company */}
+              <div className="space-y-3 border-t border-border/20 pt-6">
+                <h4 className="font-heading font-bold text-brand-blue uppercase text-xs tracking-wider">Company</h4>
+                <ul className="space-y-3">
+                  <li><Link to="/results" className="text-base font-medium block hover:text-brand-orange transition-colors">Case Studies</Link></li>
+                  <li><Link to="/about" className="text-base font-medium block hover:text-brand-orange transition-colors">Our Story</Link></li>
+                  <li><Link to="/about/one-contract" className="text-base font-bold block text-brand-orange">The One Contract Model</Link></li>
+                  <li><Link to="/about/team" className="text-base font-medium block hover:text-brand-orange transition-colors">Our Team</Link></li>
+                  <li><Link to="/resources" className="text-base font-medium block hover:text-brand-orange transition-colors">Resources</Link></li>
+                </ul>
+              </div>
+              <Button asChild className="w-full bg-brand-orange hover:bg-brand-orange/90 text-white rounded-xl py-6 text-lg font-bold">
+                <Link to="/contact">Book a Discovery Call</Link>
               </Button>
             </div>
           </motion.div>

@@ -138,6 +138,17 @@
     @apply font-heading tracking-tight;
   }
 
+  /* Brand-consistent text selection */
+  ::selection {
+    background-color: rgba(27, 73, 194, 0.2);
+    color: inherit;
+  }
+
+  /* Smooth scroll for anchor links (respects reduced-motion below) */
+  html {
+    scroll-behavior: smooth;
+  }
+
   /* §1 Accessibility: Visible focus rings on all interactive elements */
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-brand-blue;
@@ -187,6 +198,9 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  html {
+    scroll-behavior: auto;
+  }
   .slide-fade-in {
     opacity: 1;
     transform: none;
@@ -197,6 +211,11 @@
 /* §5 Layout: dvh utility for mobile viewport */
 .min-h-dvh {
   min-height: 100dvh;
+}
+
+/* Vertical text utility for Hero decoration */
+.vertical-text {
+  writing-mode: vertical-lr;
 }
 
 /* Africa Map: pulsing glow within country borders */
