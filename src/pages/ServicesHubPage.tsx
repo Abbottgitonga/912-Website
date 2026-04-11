@@ -12,7 +12,7 @@ const pillars = [
     oneLiner: 'The physical layer. Cameras, fences, doors, cabling, server rooms.',
     body: 'The hardware that protects your premises and the infrastructure that makes everything else work. We design and install ODPC-compliant CCTV systems, biometric access control, electric fences, structured cabling, and server room build-outs. We also maintain them — properly, with documentation, with monthly health checks.',
     services: ['CCTV Systems', 'Biometric Access Control', 'Electric Fence & Perimeter Security', 'Visitor Management Systems', 'Structured Cabling & Server Rooms'],
-    href: '/services/physical-security-infrastructure',
+    href: '/services/physical-security',
   },
   {
     num: '02',
@@ -21,7 +21,7 @@ const pillars = [
     oneLiner: 'The digital backbone. Cloud, security, identity, backups, telephony, day-to-day IT.',
     body: "The systems your business runs on. Cloud migration and cost optimisation. Cybersecurity and firewall management. Active Directory and identity management. Backup and disaster recovery. IP telephony. Most \"managed IT\" providers stop at this pillar — for 912, this is one of four.",
     services: ['Cloud Migration & Cost Optimisation', 'Cybersecurity & Firewall Management', 'Active Directory & Identity', 'Backup & Disaster Recovery', 'IP Telephony', 'Corporate IT Maintenance'],
-    href: '/services/cloud-core-it',
+    href: '/services/cloud-it',
   },
   {
     num: '03',

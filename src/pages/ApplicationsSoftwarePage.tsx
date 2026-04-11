@@ -16,7 +16,7 @@ const appSolutions = [
     id: "web-applications",
     title: "Web Applications",
     description: "Custom-built web platforms designed for performance, security, and exceptional user experience.",
-    href: "/expertise/web-applications",
+    href: "/services/web-applications",
     category: "Development",
     image: "/images/heroes/software-dev.png"
   },
@@ -24,7 +24,7 @@ const appSolutions = [
     id: "mobile-applications",
     title: "Mobile Applications",
     description: "Native and cross-platform mobile apps.",
-    href: "/expertise/mobile-applications",
+    href: "/services/mobile-applications",
     category: "Development",
     image: "/images/heroes/software-dev.png"
   },
@@ -32,7 +32,7 @@ const appSolutions = [
     id: "saas-platforms",
     title: "SaaS Platforms",
     description: "End-to-end development of software products.",
-    href: "/expertise/saas-platforms",
+    href: "/services/saas-platforms",
     category: "Product",
     image: "/images/heroes/software-dev.png"
   },
@@ -40,7 +40,7 @@ const appSolutions = [
     id: "erp-systems",
     title: "ERP Systems",
     description: "Integrated business management software.",
-    href: "/expertise/erp-systems",
+    href: "/services/erp-systems",
     category: "Enterprise",
     image: "/images/heroes/software-dev.png"
   }

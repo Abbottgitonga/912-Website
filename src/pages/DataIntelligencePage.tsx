@@ -18,7 +18,7 @@ const dataSolutions = [
     id: "power-bi-reporting",
     title: "Power BI & Reporting",
     description: "Custom dashboards and automated reporting for enterprise leadership.",
-    href: "/expertise/power-bi-&-reporting",
+    href: "/services/power-bi-reporting",
     category: "Analytics",
     image: "/images/heroes/data-intelligence.png"
   },
@@ -26,7 +26,7 @@ const dataSolutions = [
     id: "data-engineering",
     title: "Data Engineering",
     description: "Robust data warehousing and ETL pipeline automation.",
-    href: "/expertise/data-engineering",
+    href: "/services/data-engineering",
     category: "Architecture",
     image: "/images/heroes/data-intelligence.png"
   }

@@ -46,6 +46,10 @@ const ResultsPage = React.lazy(() => import('@/pages/ResultsPage'));
 const ServicesHubPage = React.lazy(() => import('@/pages/ServicesHubPage'));
 const ResourcesPage = React.lazy(() => import('@/pages/ResourcesPage'));
 const TeamPage = React.lazy(() => import('@/pages/TeamPage'));
+const IndustryPage = React.lazy(() => import('@/pages/IndustryPage'));
+const SitemapPage = React.lazy(() => import('@/pages/SitemapPage'));
+const PrivacyPolicyPage = React.lazy(() => import('@/pages/PrivacyPolicyPage'));
+const TermsConditionsPage = React.lazy(() => import('@/pages/TermsConditionsPage'));
 
 // Blog System
 const BlogIndexPage = React.lazy(() => import('@/pages/blog/BlogIndexPage'));
@@ -177,8 +181,8 @@ export default function App() {
 
               {/* Services hub */}
               <Route path="/services" element={<ServicesHubPage />} />
-              <Route path="/services/physical-security-infrastructure" element={<PhysicalSecurityPage />} />
-              <Route path="/services/cloud-core-it" element={<CloudITPage />} />
+              <Route path="/services/physical-security" element={<PhysicalSecurityPage />} />
+              <Route path="/services/cloud-it" element={<CloudITPage />} />
               <Route path="/services/applications-software" element={<ApplicationsSoftwarePage />} />
               <Route path="/services/data-intelligence" element={<DataIntelligencePage />} />
 
@@ -190,20 +194,20 @@ export default function App() {
               <Route path="/expertise/data-&-intelligence" element={<DataIntelligencePage />} />
 
               {/* Sub-service detail pages */}
-              <Route path="/expertise/access-control" element={<AccessControlPage />} />
-              <Route path="/expertise/backup-&-recovery" element={<BackupRecoveryPage />} />
-              <Route path="/expertise/cloud" element={<CloudPage />} />
-              <Route path="/expertise/cctv-&-surveillance" element={<CCTVPage />} />
-              <Route path="/expertise/power-bi-&-reporting" element={<PowerBIPage />} />
-              <Route path="/expertise/web-applications" element={<WebApplicationsPage />} />
-              <Route path="/expertise/mobile-applications" element={<MobileApplicationsPage />} />
-              <Route path="/expertise/saas-platforms" element={<SaaSPlatformsPage />} />
-              <Route path="/expertise/erp-systems" element={<ERPSystemsPage />} />
-              <Route path="/expertise/cybersecurity" element={<CybersecurityPage />} />
-              <Route path="/expertise/ip-telephony" element={<IPTelephonyPage />} />
-              <Route path="/expertise/electric-fence" element={<ElectricFencePage />} />
-              <Route path="/expertise/structured-cabling" element={<StructuredCablingPage />} />
-              <Route path="/expertise/data-engineering" element={<DataEngineeringPage />} />
+              <Route path="/services/access-control" element={<AccessControlPage />} />
+              <Route path="/services/backup-recovery" element={<BackupRecoveryPage />} />
+              <Route path="/services/cloud" element={<CloudPage />} />
+              <Route path="/services/cctv-surveillance" element={<CCTVPage />} />
+              <Route path="/services/power-bi-reporting" element={<PowerBIPage />} />
+              <Route path="/services/web-applications" element={<WebApplicationsPage />} />
+              <Route path="/services/mobile-applications" element={<MobileApplicationsPage />} />
+              <Route path="/services/saas-platforms" element={<SaaSPlatformsPage />} />
+              <Route path="/services/erp-systems" element={<ERPSystemsPage />} />
+              <Route path="/services/cybersecurity" element={<CybersecurityPage />} />
+              <Route path="/services/ip-telephony" element={<IPTelephonyPage />} />
+              <Route path="/services/electric-fence" element={<ElectricFencePage />} />
+              <Route path="/services/structured-cabling" element={<StructuredCablingPage />} />
+              <Route path="/services/data-engineering" element={<DataEngineeringPage />} />
 
               {/* Case studies */}
               <Route path="/results" element={<ResultsPage />} />
@@ -216,10 +220,12 @@ export default function App() {
               {/* Competitor alternatives */}
               <Route path="/compare/liquid-intelligent-vs-912" element={<LiquidIntelligentVs912Page />} />
 
+              <Route path="/industries/:slug" element={<IndustryPage />} />
+
               {/* Utility pages */}
-              <Route path="/privacy" element={<PlaceholderPage title="Privacy Policy" />} />
-              <Route path="/terms" element={<PlaceholderPage title="Terms of Service" />} />
-              <Route path="/sitemap" element={<PlaceholderPage title="Sitemap" />} />
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms" element={<TermsConditionsPage />} />
+              <Route path="/sitemap" element={<SitemapPage />} />
 
               {/* 404 */}
               <Route path="*" element={<NotFoundPage />} />

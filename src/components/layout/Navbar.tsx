@@ -14,8 +14,8 @@ import {
 } from "@/components/ui/navigation-menu";
 
 const serviceItems = [
-  { title: "Physical & Security Infrastructure", href: "/services/physical-security-infrastructure" },
-  { title: "Cloud & Core IT", href: "/services/cloud-core-it" },
+  { title: "Physical & Security Infrastructure", href: "/services/physical-security" },
+  { title: "Cloud & Core IT", href: "/services/cloud-it" },
   { title: "Applications & Software", href: "/services/applications-software" },
   { title: "Data & Intelligence", href: "/services/data-intelligence" },
 ];
@@ -31,7 +31,7 @@ const industriesItems = [
   { title: "Financial Services", href: "/industries/financial-services" },
   { title: "Manufacturing & Logistics", href: "/industries/manufacturing-logistics" },
   { title: "Healthcare", href: "/industries/healthcare" },
-  { title: "Retail & E-commerce", href: "/industries/retail" },
+  { title: "Retail & E-commerce", href: "/industries/retail-ecommerce" },
 ];
 
 export function Navbar() {

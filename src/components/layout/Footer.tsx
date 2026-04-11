@@ -64,8 +64,8 @@ export function Footer() {
           <div>
             <h4 className="font-heading font-bold text-sm uppercase tracking-wider mb-6 text-white/80">Services</h4>
             <ul className="space-y-1 text-white/50 text-sm">
-              <li><Link to="/services/physical-security-infrastructure" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Physical & Security Infrastructure</Link></li>
-              <li><Link to="/services/cloud-core-it" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Cloud & Core IT</Link></li>
+              <li><Link to="/services/physical-security" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Physical & Security Infrastructure</Link></li>
+              <li><Link to="/services/cloud-it" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Cloud & Core IT</Link></li>
               <li><Link to="/services/applications-software" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Applications & Software</Link></li>
               <li><Link to="/services/data-intelligence" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Data & Intelligence</Link></li>
               <li><Link to="/services" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors font-medium text-white/70">All Services</Link></li>

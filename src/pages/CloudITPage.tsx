@@ -19,7 +19,7 @@ const cloudSolutions = [
     id: "cloud-solutions",
     title: "Cloud Solutions",
     description: "Scalable public, private, and hybrid cloud architectures.",
-    href: "/expertise/cloud",
+    href: "/services/cloud",
     category: "Infrastructure",
     image: "/images/heroes/cloud-it.png"
   },
@@ -27,7 +27,7 @@ const cloudSolutions = [
     id: "backup-recovery",
     title: "Backup & Recovery",
     description: "Business continuity and disaster recovery planning.",
-    href: "/expertise/backup-&-recovery",
+    href: "/services/backup-recovery",
     category: "Resilience",
     image: "/images/heroes/cloud-it.png"
   }

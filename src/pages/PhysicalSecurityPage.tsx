@@ -18,7 +18,7 @@ const securitySolutions = [
     id: "access-control",
     title: "Access Control",
     description: "Comprehensive entry management and biometric solutions.",
-    href: "/expertise/access-control",
+    href: "/services/access-control",
     category: "Physical Security",
     image: "/images/heroes/physical-security.png"
   },
@@ -26,7 +26,7 @@ const securitySolutions = [
     id: "cctv-surveillance",
     title: "CCTV & Surveillance",
     description: "AI-powered visual intelligence and remote monitoring.",
-    href: "/expertise/cctv-&-surveillance",
+    href: "/services/cctv-surveillance",
     category: "Surveillance",
     image: "/images/heroes/physical-security.png"
   }
