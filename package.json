@@ -25,7 +25,17 @@
       "/results",
       "/blog",
       "/faq",
-      "/contact"
+      "/contact",
+      "/locations/it-support-nairobi-kenya",
+      "/locations/it-support-dakar-senegal",
+      "/locations/it-support-kinshasa-dr-congo",
+      "/locations/it-support-kigali-rwanda",
+      "/locations/it-support-accra-ghana",
+      "/locations/it-support-luanda-angola",
+      "/locations/it-support-ouagadougou-burkina-faso",
+      "/locations/it-support-cotonou-benin",
+      "/locations/it-support-bamako-mali",
+      "/locations/it-support-bujumbura-burundi"
     ],
     "inlineCss": true,
     "sourceMap": false

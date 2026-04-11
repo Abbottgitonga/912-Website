@@ -115,6 +115,9 @@ const DataEngineeringPage = React.lazy(() => import('@/pages/services/DataEngine
 // Competitor alternative pages
 const LiquidIntelligentVs912Page = React.lazy(() => import('@/pages/competitors/LiquidIntelligentVs912Page'));
 
+// Programmatic SEO Location Pages
+const LocationPage = React.lazy(() => import('@/pages/locations/LocationPage'));
+
 // Scroll to top on route change
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -257,6 +260,9 @@ export default function App() {
               <Route path="/compare/liquid-intelligent-vs-912" element={<LiquidIntelligentVs912Page />} />
 
               <Route path="/industries/:slug" element={<IndustryPage />} />
+              
+              {/* Regional Location Pages (Programmatic SEO) */}
+              <Route path="/locations/:slug" element={<LocationPage />} />
 
               {/* Utility pages */}
               <Route path="/privacy" element={<PrivacyPolicyPage />} />
