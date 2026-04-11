@@ -32,7 +32,7 @@ export function Hero() {
   // Removed parallax scroll to fix mobile lag issues
 
   return (
-    <section ref={heroRef} className="relative h-screen min-h-[800px] flex items-center overflow-hidden bg-[#0A0A1A]">
+    <section ref={heroRef} className="relative min-h-[100dvh] lg:h-screen lg:min-h-[800px] flex items-start lg:items-center pt-32 pb-20 md:pt-40 lg:py-0 overflow-hidden bg-[#0A0A1A]">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0" aria-hidden="true">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0A1A]/50 to-[#0A0A1A] z-10" />
