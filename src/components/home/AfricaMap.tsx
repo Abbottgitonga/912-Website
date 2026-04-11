@@ -243,7 +243,7 @@ export function AfricaMap({ variant = 'hero' }: AfricaMapProps) {
 
   return (
     <div
-      className={`relative select-none ${
+      className={`relative select-none pointer-events-none ${
         isHero
           ? 'w-full aspect-square max-w-2xl mx-auto'
           : 'w-full max-w-4xl mx-auto'

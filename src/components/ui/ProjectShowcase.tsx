@@ -70,7 +70,7 @@ export function ProjectShowcase({
                   to={item.href}
                   onMouseEnter={() => setHoveredIndex(index)}
                   className={cn(
-                    'group/item relative flex flex-col md:flex-row md:items-center justify-between border-t py-8 px-4 transition-all duration-500',
+                    'group/item relative flex flex-col md:flex-row md:items-center min-h-[44px] justify-between border-t py-8 px-4 transition-all duration-500',
                     isDark ? 'border-white/10 hover:bg-white/5' : 'border-slate-200 hover:bg-slate-50',
                     isHovered ? 'z-20' : 'z-10'
                   )}
@@ -116,6 +116,7 @@ export function ProjectShowcase({
                           ? 'border-brand-orange bg-brand-orange text-white rotate-0' 
                           : cn('-rotate-45', isDark ? 'border-white/20 text-white/50' : 'border-slate-300 text-slate-400')
                       )}
+                      aria-hidden="true"
                     >
                       <ArrowRight className="h-5 w-5" />
                     </div>

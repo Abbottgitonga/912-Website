@@ -27,7 +27,7 @@ export default function HomePage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <ScrollReveal className="mb-12">
-            <span className="text-brand-orange uppercase tracking-[0.4em] text-xs font-black mb-4 block">What this looks like in practice</span>
+            <span className="text-brand-orange-accessible uppercase tracking-[0.4em] text-xs font-black mb-4 block">What this looks like in practice</span>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -48,7 +48,7 @@ export default function HomePage() {
             ))}
           </div>
           <ScrollReveal delay={0.3} className="mt-8 text-center">
-            <Link to="/results" className="inline-flex items-center text-brand-dark font-black text-xs uppercase tracking-widest hover:text-brand-orange transition-colors group">
+            <Link to="/results" className="inline-flex items-center justify-center min-h-[44px] px-4 text-brand-dark font-black text-xs uppercase tracking-widest hover:text-brand-orange transition-colors group">
               Read the full case studies
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </Link>
@@ -80,7 +80,7 @@ export default function HomePage() {
               </p>
               <Link
                 to="/about"
-                className="inline-flex items-center text-brand-orange font-black text-xs uppercase tracking-widest hover:text-white transition-colors group"
+                className="inline-flex items-center justify-center min-h-[44px] text-brand-orange font-black text-xs uppercase tracking-widest hover:text-white transition-colors group"
               >
                 Our Story
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
@@ -100,7 +100,7 @@ export default function HomePage() {
             <ScrollReveal>
               <div className="flex items-center gap-4 mb-8">
                 <div className="h-[1px] flex-1 bg-slate-200" aria-hidden="true" />
-                <span className="text-brand-orange uppercase tracking-[0.4em] text-[10px] font-black">From the Founder</span>
+                <span className="text-brand-orange-accessible uppercase tracking-[0.4em] text-[10px] font-black">From the Founder</span>
                 <div className="h-[1px] flex-1 bg-slate-200" aria-hidden="true" />
               </div>
               <blockquote className="text-2xl md:text-3xl font-heading font-medium text-brand-dark leading-relaxed text-center mb-8">

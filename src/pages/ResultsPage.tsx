@@ -190,7 +190,7 @@ export default function ResultsPage() {
                         }`}
                       >
                         Read case study
-                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                       </span>
                     </div>
                   </div>
@@ -204,7 +204,7 @@ export default function ResultsPage() {
       {/* Final CTA */}
       <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-4 text-center max-w-2xl">
-          <span className="text-brand-orange uppercase tracking-[0.4em] text-xs font-black mb-4 block">
+          <span className="text-brand-orange-accessible uppercase tracking-[0.4em] text-xs font-black mb-4 block">
             Your turn
           </span>
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-brand-dark mb-6">

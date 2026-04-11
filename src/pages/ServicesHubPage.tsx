@@ -88,9 +88,9 @@ export default function ServicesHubPage() {
                     <h3 className="text-3xl font-heading font-bold text-brand-dark mb-3">{pillar.title}</h3>
                     <p className="text-brand-blue font-medium mb-4">{pillar.oneLiner}</p>
                     <p className="text-slate-500 leading-relaxed mb-6">{pillar.body}</p>
-                    <Link to={pillar.href} className="inline-flex items-center text-brand-dark font-black text-xs uppercase tracking-widest hover:text-brand-orange transition-colors group">
+                    <Link to={pillar.href} className="inline-flex items-center min-h-[44px] text-brand-dark font-black text-xs uppercase tracking-widest hover:text-brand-orange transition-colors group">
                       Explore {pillar.title.split(' ')[0]} & {pillar.title.split(' ').slice(-1)}
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                     </Link>
                   </div>
                   <div className="lg:col-span-5">
@@ -115,7 +115,7 @@ export default function ServicesHubPage() {
       <section className="py-24 bg-slate-50">
         <div className="container mx-auto px-4 max-w-3xl">
           <ScrollReveal>
-            <span className="text-brand-orange uppercase tracking-[0.4em] text-xs font-black mb-4 block">The architecture</span>
+            <span className="text-brand-orange-accessible uppercase tracking-[0.4em] text-xs font-black mb-4 block">The architecture</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-brand-dark mb-8">
               Why every one of these services lives under the same contract.
             </h2>
@@ -125,9 +125,9 @@ export default function ServicesHubPage() {
             <p className="text-lg text-slate-600 leading-relaxed mb-8">
               The 912 model is structured around a single observation: the cost and risk of running a business on technology has nothing to do with the quality of any individual component. It has everything to do with how those components are documented, coordinated, and accounted for.
             </p>
-            <Link to="/about/one-contract" className="inline-flex items-center text-brand-blue font-bold hover:text-brand-orange transition-colors group">
+            <Link to="/about/one-contract" className="inline-flex items-center min-h-[44px] text-brand-blue font-bold hover:text-brand-orange transition-colors group">
               Read the full One Contract Model
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </Link>
           </ScrollReveal>
         </div>
@@ -136,7 +136,7 @@ export default function ServicesHubPage() {
       {/* CTA */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 text-center max-w-2xl">
-          <span className="text-brand-orange uppercase tracking-[0.4em] text-xs font-black mb-4 block">Where to start</span>
+          <span className="text-brand-orange-accessible uppercase tracking-[0.4em] text-xs font-black mb-4 block">Where to start</span>
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-brand-dark mb-6">
             Not sure which pillar matters most for your business?
           </h2>

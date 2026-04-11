@@ -70,9 +70,9 @@ export function HoverBorderButton({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={cn(
-        'relative flex h-min w-fit flex-col flex-nowrap content-center items-center justify-center gap-10 overflow-visible rounded-full border box-decoration-clone p-px backdrop-blur-sm transition duration-500',
+        'relative flex h-min w-fit min-h-[44px] min-w-[44px] flex-col flex-nowrap content-center items-center justify-center gap-10 overflow-visible rounded-full border box-decoration-clone p-px backdrop-blur-sm transition duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark',
         theme === 'light'
-          ? 'border-slate-300 bg-white/40 hover:bg-white/60'
+          ? 'border-slate-300 bg-white/40 hover:bg-white/60 focus-visible:ring-offset-white'
           : 'border-white/20 bg-black/40 hover:bg-black/60',
         containerClassName
       )}

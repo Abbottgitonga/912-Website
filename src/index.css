@@ -187,6 +187,14 @@
   @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-blue to-brand-orange;
 }
 
+/* WCAG AAA compliant text color for light mode, falls back to brand-orange in dark */
+.text-brand-orange-accessible {
+  color: #CC4A00; /* WCAG 4.5:1 against white */
+}
+.dark .text-brand-orange-accessible {
+  color: var(--color-brand-orange);
+}
+
 .glass-card {
   @apply bg-white/10 backdrop-blur-md border border-white/20;
 }

@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { HoverBorderButton } from '@/components/ui/HoverBorderButton';
 import { Link } from 'react-router-dom';
+import { PartnershipTicker } from '@/components/ui/PartnershipTicker';
 import { cn } from '@/lib/utils';
 
 interface ServiceLayoutProps {
@@ -12,6 +13,7 @@ interface ServiceLayoutProps {
     subtitle: string;
     description: string;
     image?: string;
+    imageAlt?: string;
     breadcrumbs: { label: string; href?: string }[];
     animation?: React.ReactNode;
   };
@@ -153,51 +155,36 @@ export function ServiceLayout({
   return (
     <div className={cn("pt-0", theme === 'dark' ? "bg-brand-dark text-white" : "bg-white text-brand-dark")}>
       {/* Hero Section */}
-      <section className={cn(
-        "relative min-h-screen flex items-center overflow-hidden",
-        theme === 'dark' ? "bg-brand-dark" : "bg-slate-50"
-      )}>
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-dark">
         {/* Professional Tech Background Elements */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           {/* Base Background */}
-          <div className={cn(
-            "absolute inset-0 transition-colors duration-1000",
-            theme === 'dark' ? "bg-brand-dark" : "bg-slate-50"
-          )} />
+          <div className="absolute inset-0 transition-colors duration-1000 bg-brand-dark" />
           
           {/* Subtle Grid overlay */}
           <div 
             className="absolute inset-0 opacity-[0.03]" 
             style={{ 
-              backgroundImage: theme === 'dark' 
-                ? 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)' 
-                : 'linear-gradient(to right, #000000 1px, transparent 1px), linear-gradient(to bottom, #000000 1px, transparent 1px)',
+              backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
               backgroundSize: '4rem 4rem'
             }} 
           />
           
           {/* Elegant atmospheric glows */}
-          {theme === 'dark' && (
-            <>
-              <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-blue/10 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3" />
-              <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-orange/5 rounded-full blur-[150px] translate-y-1/3 -translate-x-1/3" />
-            </>
-          )}
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-blue/10 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-orange/5 rounded-full blur-[150px] translate-y-1/3 -translate-x-1/3" />
 
           {/* Original Image integration if provided, heavily overlayed */}
           {hero.image && (
             <div className="absolute inset-0 z-0">
               <img 
                 src={hero.image} 
-                alt={hero.title}
+                alt={hero.imageAlt || `${hero.title} - 912 Enterprise IT Infrastructure Africa`}
+                fetchPriority="high"
+                loading="eager"
                 className="w-full h-full object-cover opacity-20 grayscale mix-blend-overlay"
               />
-              <div className={cn(
-                "absolute inset-0",
-                theme === 'dark' 
-                  ? "bg-gradient-to-r from-brand-dark via-brand-dark/95 to-brand-dark/80" 
-                  : "bg-gradient-to-r from-slate-50 via-slate-50/95 to-white/80"
-              )} />
+              <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/95 to-brand-dark/80" />
             </div>
           )}
         </div>
@@ -211,7 +198,7 @@ export function ServiceLayout({
                     {bc.href ? (
                       <a href={bc.href} className="hover:text-brand-blue transition-colors">{bc.label}</a>
                     ) : (
-                      <span className={theme === 'dark' ? "text-white" : "text-brand-dark"}>{bc.label}</span>
+                      <span className="text-white">{bc.label}</span>
                     )}
                     {i < hero.breadcrumbs.length - 1 && <span className="opacity-30">/</span>}
                   </React.Fragment>
@@ -223,10 +210,7 @@ export function ServiceLayout({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h1 className={cn(
-                  "text-6xl md:text-8xl font-heading font-black mb-8 leading-[0.9] tracking-tighter uppercase",
-                  theme === 'dark' ? "text-white" : "text-brand-dark"
-                )}>
+                <h1 className="text-5xl sm:text-6xl lg:text-[4.5rem] xl:text-[5.5rem] font-heading font-black mb-8 leading-[0.9] tracking-tighter uppercase text-white break-words hyphens-auto">
                   {hero.title.split(' ').map((word, i) => {
                     const isOrange = word === 'Infrastructure' || word === 'Reporting' || word === 'Apps' || word === 'Software' || word === 'Custom';
                     const isBlue = word === 'Security' || word === 'Intelligence' || word === 'Recovery' || word === 'Cloud';
@@ -251,10 +235,7 @@ export function ServiceLayout({
                   </p>
                 </div>
 
-                <p className={cn(
-                  "text-xl mb-12 max-w-xl leading-relaxed font-medium",
-                  theme === 'dark' ? "text-white/60" : "text-slate-500"
-                )}>
+                <p className="text-xl mb-12 max-w-xl leading-relaxed font-medium text-white/60">
                   {hero.description}
                 </p>
 
@@ -390,6 +371,9 @@ export function ServiceLayout({
           </div>
         </div>
       </section>
+
+      {/* Global Partnership Ticker */}
+      <PartnershipTicker />
 
       {/* Capabilities Section */}
       <section className="py-24 bg-gray-50">

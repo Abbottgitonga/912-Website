@@ -38,6 +38,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0A1A]/50 to-[#0A0A1A] z-10" />
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(27,73,194,0.15),transparent_70%)]" />
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
+      </div>
 
       {/* Africa Map - Absolute on desktop, handled in flow for mobile later */}
       <div className="absolute right-0 top-[15%] z-20 hidden lg:block w-[55%] xl:w-[50%] pointer-events-none opacity-90">

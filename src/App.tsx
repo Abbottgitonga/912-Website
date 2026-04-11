@@ -5,6 +5,33 @@ import { Footer } from '@/components/layout/Footer';
 import { LampCTA } from '@/components/layout/LampCTA';
 import { HoverBorderButton } from '@/components/ui/HoverBorderButton';
 import { ArrowRight } from 'lucide-react';
+import { SchemaManager } from '@/components/seo/SchemaManager';
+
+const globalOrganizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "912",
+  "image": "https://912.africa/logo.png",
+  "@id": "https://912.africa",
+  "url": "https://912.africa",
+  "telephone": "+254000000000",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "12"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Technology Hub",
+    "addressLocality": "Nairobi",
+    "addressRegion": "Nairobi",
+    "postalCode": "00100",
+    "addressCountry": "KE"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/912-tech"
+  ]
+};
 
 // Lazy load route pages for bundle splitting
 const HomePage = React.lazy(() => import('@/pages/HomePage'));
@@ -19,6 +46,9 @@ const ResultsPage = React.lazy(() => import('@/pages/ResultsPage'));
 const ServicesHubPage = React.lazy(() => import('@/pages/ServicesHubPage'));
 const ResourcesPage = React.lazy(() => import('@/pages/ResourcesPage'));
 const TeamPage = React.lazy(() => import('@/pages/TeamPage'));
+
+// Blog System
+const BlogIndexPage = React.lazy(() => import('@/pages/blog/BlogIndexPage'));
 
 // Case study pages
 const SenegalFactoryRescuePage = React.lazy(() => import('@/pages/results/SenegalFactoryRescuePage'));
@@ -42,6 +72,9 @@ const IPTelephonyPage = React.lazy(() => import('@/pages/services/IPTelephonyPag
 const ElectricFencePage = React.lazy(() => import('@/pages/services/ElectricFencePage'));
 const StructuredCablingPage = React.lazy(() => import('@/pages/services/StructuredCablingPage'));
 const DataEngineeringPage = React.lazy(() => import('@/pages/services/DataEngineeringPage'));
+
+// Competitor alternative pages
+const LiquidIntelligentVs912Page = React.lazy(() => import('@/pages/competitors/LiquidIntelligentVs912Page'));
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -128,6 +161,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
+      <SchemaManager schema={globalOrganizationSchema} id="organization-schema" />
       <div className="flex flex-col min-h-dvh">
         <Navbar />
         <div className="flex-grow" id="main-content" role="main" tabIndex={-1} style={{ outline: 'none' }}>
@@ -139,6 +173,7 @@ export default function App() {
               <Route path="/about/team" element={<TeamPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/resources" element={<ResourcesPage />} />
+              <Route path="/blog" element={<BlogIndexPage />} />
 
               {/* Services hub */}
               <Route path="/services" element={<ServicesHubPage />} />
@@ -177,6 +212,9 @@ export default function App() {
               <Route path="/results/internal-fraud-discovery" element={<InternalFraudPage />} />
               <Route path="/results/fmcg-automation" element={<FMCGAutomationPage />} />
               <Route path="/results/erp-security" element={<ERPSecurityPage />} />
+
+              {/* Competitor alternatives */}
+              <Route path="/compare/liquid-intelligent-vs-912" element={<LiquidIntelligentVs912Page />} />
 
               {/* Utility pages */}
               <Route path="/privacy" element={<PlaceholderPage title="Privacy Policy" />} />

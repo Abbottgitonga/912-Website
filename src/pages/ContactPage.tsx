@@ -80,7 +80,7 @@ export default function ContactPage() {
                     Existing clients with active AMC contracts can access 24/7 emergency support 
                     via their dedicated account manager.
                   </p>
-                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-brand-blue rounded-none w-full">
+                  <Button variant="outline" className="border-white text-white hover:bg-white hover:text-brand-blue rounded-none w-full min-h-[44px]">
                     Client Login
                   </Button>
                 </div>
@@ -111,9 +111,10 @@ export default function ContactPage() {
                       <label htmlFor="contact-message" className="text-xs uppercase tracking-widest font-bold text-slate-400">Message <span className="text-red-500" aria-hidden="true">*</span></label>
                       <textarea id="contact-message" name="message" required className="w-full bg-white border border-slate-200 p-4 h-32 focus:border-brand-blue outline-none transition-colors" placeholder="How can we help you?"></textarea>
                     </div>
-                    <Button type="submit" className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white rounded-none py-8 text-lg">
+                    <Button type="submit" className="w-full bg-brand-blue hover:bg-brand-blue/90 text-white rounded-none py-8 text-lg min-h-[44px]">
                       Send Message
                     </Button>
+                    <div aria-live="polite" className="text-sm text-red-500 font-medium"></div>
                   </form>
                 </div>
               </ScrollReveal>
@@ -128,7 +129,7 @@ export default function ContactPage() {
                   <div className="bg-slate-100 aspect-video flex items-center justify-center border-2 border-dashed border-slate-300">
                     <div className="text-center">
                       <p className="text-slate-400 font-medium mb-4">[Calendly Embed Placeholder]</p>
-                      <Button className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-none">
+                      <Button className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-none min-h-[44px]">
                         Open Scheduler
                       </Button>
                     </div>

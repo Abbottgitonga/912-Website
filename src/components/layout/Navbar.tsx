@@ -27,6 +27,13 @@ const aboutItems = [
   { title: "Get in Touch", href: "/contact" },
 ];
 
+const industriesItems = [
+  { title: "Financial Services", href: "/industries/financial-services" },
+  { title: "Manufacturing & Logistics", href: "/industries/manufacturing-logistics" },
+  { title: "Healthcare", href: "/industries/healthcare" },
+  { title: "Retail & E-commerce", href: "/industries/retail" },
+];
+
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -56,7 +63,7 @@ export function Navbar() {
       <div className="px-2">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-2 group" aria-label="912 Home">
             <div className="relative w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center overflow-hidden">
               <span className="text-white font-bold text-xl relative z-10">912</span>
             </div>
@@ -103,6 +110,34 @@ export function Navbar() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
+                {/* Industries dropdown */}
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent hover:bg-transparent focus:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent font-medium">
+                    Industries
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="w-[320px] p-4">
+                      <h4 className="font-heading font-bold text-brand-blue mb-3 uppercase text-xs tracking-wider">
+                        Who We Serve
+                      </h4>
+                      <ul className="space-y-1">
+                        {industriesItems.map((item) => (
+                          <li key={item.href}>
+                            <NavigationMenuLink asChild>
+                              <Link 
+                                to={item.href}
+                                className="text-sm hover:text-brand-orange transition-colors block py-2 px-3 rounded-lg hover:bg-slate-50"
+                              >
+                                {item.title}
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
                 {/* Case Studies */}
                 <NavigationMenuItem>
                   <Link to="/results" className="text-sm font-medium hover:text-brand-orange transition-colors px-4">
@@ -142,6 +177,13 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <Link to="/resources" className="text-sm font-medium hover:text-brand-orange transition-colors px-4">
                     Resources
+                  </Link>
+                </NavigationMenuItem>
+
+                {/* Intelligence (Blog) */}
+                <NavigationMenuItem>
+                  <Link to="/blog" className="text-sm font-medium hover:text-brand-orange transition-colors px-4 text-brand-orange">
+                    Intelligence
                   </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
@@ -186,7 +228,20 @@ export function Navbar() {
                 <ul className="space-y-3">
                   {serviceItems.map((item) => (
                     <li key={item.href}>
-                      <Link to={item.href} className="text-base font-medium block hover:text-brand-orange transition-colors">
+                      <Link to={item.href} className="text-base font-medium flex items-center min-h-[44px] hover:text-brand-orange transition-colors">
+                        {item.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* Industries */}
+              <div className="space-y-3 pt-4">
+                <h4 className="font-heading font-bold text-brand-blue uppercase text-xs tracking-wider">Industries</h4>
+                <ul className="space-y-3">
+                  {industriesItems.map((item) => (
+                    <li key={item.href}>
+                      <Link to={item.href} className="text-base font-medium flex items-center min-h-[44px] hover:text-brand-orange transition-colors">
                         {item.title}
                       </Link>
                     </li>
@@ -196,12 +251,13 @@ export function Navbar() {
               {/* Company */}
               <div className="space-y-3 border-t border-border/20 pt-6">
                 <h4 className="font-heading font-bold text-brand-blue uppercase text-xs tracking-wider">Company</h4>
-                <ul className="space-y-3">
-                  <li><Link to="/results" className="text-base font-medium block hover:text-brand-orange transition-colors">Case Studies</Link></li>
-                  <li><Link to="/about" className="text-base font-medium block hover:text-brand-orange transition-colors">Our Story</Link></li>
-                  <li><Link to="/about/one-contract" className="text-base font-bold block text-brand-orange">The One Contract Model</Link></li>
-                  <li><Link to="/about/team" className="text-base font-medium block hover:text-brand-orange transition-colors">Our Team</Link></li>
-                  <li><Link to="/resources" className="text-base font-medium block hover:text-brand-orange transition-colors">Resources</Link></li>
+                <ul className="space-y-1">
+                  <li><Link to="/results" className="text-base font-medium flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Case Studies</Link></li>
+                  <li><Link to="/about" className="text-base font-medium flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Our Story</Link></li>
+                  <li><Link to="/about/one-contract" className="text-base font-bold flex items-center min-h-[44px] text-brand-orange">The One Contract Model</Link></li>
+                  <li><Link to="/about/team" className="text-base font-medium flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Our People</Link></li>
+                  <li><Link to="/resources" className="text-base font-medium flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Resources Tracker</Link></li>
+                  <li><Link to="/blog" className="text-base font-bold flex items-center min-h-[44px] text-brand-orange">Intelligence Blog</Link></li>
                 </ul>
               </div>
               <Button asChild className="w-full bg-brand-orange hover:bg-brand-orange/90 text-white rounded-xl py-6 text-lg font-bold">

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ScrollReveal } from '@/components/layout/ScrollReveal';
 import { FileSpreadsheet, Shield, BarChart3, CheckCircle2 } from 'lucide-react';
+import { LeadMagnetForm } from '@/components/forms/LeadMagnetForm';
 
 export default function ResourcesPage() {
   return (
@@ -56,36 +57,12 @@ export default function ResourcesPage() {
           <ScrollReveal>
             <span className="text-brand-orange uppercase tracking-[0.4em] text-xs font-black mb-4 block">Get the template</span>
             <h2 className="text-3xl font-heading font-bold text-brand-dark mb-8">Download the workbook.</h2>
-            <form className="space-y-6">
-              <div className="space-y-2">
-                <label htmlFor="res-name" className="text-xs uppercase tracking-widest font-bold text-slate-400">Full name <span className="text-red-500">*</span></label>
-                <input id="res-name" type="text" required className="w-full bg-white border border-slate-200 p-4 focus:border-brand-blue outline-none transition-colors" />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="res-email" className="text-xs uppercase tracking-widest font-bold text-slate-400">Work email <span className="text-red-500">*</span></label>
-                <input id="res-email" type="email" required className="w-full bg-white border border-slate-200 p-4 focus:border-brand-blue outline-none transition-colors" />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="res-company" className="text-xs uppercase tracking-widest font-bold text-slate-400">Company name <span className="text-red-500">*</span></label>
-                <input id="res-company" type="text" required className="w-full bg-white border border-slate-200 p-4 focus:border-brand-blue outline-none transition-colors" />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="res-vendors" className="text-xs uppercase tracking-widest font-bold text-slate-400">How many IT vendors are you currently working with?</label>
-                <select id="res-vendors" className="w-full bg-white border border-slate-200 p-4 focus:border-brand-blue outline-none transition-colors">
-                  <option>1</option>
-                  <option>2–3</option>
-                  <option>4–5</option>
-                  <option>6+</option>
-                  <option>I'm not sure</option>
-                </select>
-              </div>
-              <button type="submit" className="w-full bg-brand-orange hover:bg-brand-orange/90 text-white font-bold text-lg py-5 transition-colors">
-                Send me the template
-              </button>
-              <p className="text-xs text-slate-400 text-center">
-                We don't run automated email sequences. You'll receive the template once. If you'd like a follow-up conversation, you'll have to ask for one.
-              </p>
-            </form>
+            <LeadMagnetForm 
+              magnetTitle="The 912 Audit Workbook"
+              magnetDescription="We don't run automated email sequences. You'll receive the template once. If you'd like a follow-up conversation, you'll have to ask for one."
+              buttonCopy="Send me the template"
+              theme="light"
+            />
           </ScrollReveal>
         </div>
       </section>

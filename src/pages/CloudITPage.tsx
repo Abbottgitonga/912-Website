@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ProjectShowcase } from '@/components/ui/ProjectShowcase';
 import { FAQSection } from '@/components/ui/FAQSection';
+import { AEOBlock } from '@/components/ui/AEOBlock';
 
 const cloudFaqs = [
   { question: "What is cloud migration?", answer: "Cloud migration involves moving your digital assets, services, databases, IT resources, and applications either partially, or wholly, into the cloud. It helps scale your business dynamically." },
@@ -38,7 +39,7 @@ export default function CloudITPage() {
       hero={{
         title: "Cloud & Core IT Infrastructure",
         subtitle: "Resilient Environments | Unified Communications | Enterprise Security",
-        description: "We build the digital backbone of your business. Our cloud and core IT services ensure your operations are scalable, secure, and always connected across the African continent.",
+        description: "We build the digital backbone of your business. Whether you need Fully Managed IT to outsource your entire technology stack, or Co-Managed IT to empower your existing internal team, our engineers ensure your operations are scalable, secure, and always connected.",
         image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000",
         breadcrumbs: [
           { label: "Home", href: "/" },
@@ -56,6 +57,15 @@ export default function CloudITPage() {
               "Public, Private & Hybrid Cloud",
               "Cloud migration & strategy",
               "Cost optimization & management"
+            ]
+          },
+          {
+            title: "Co-Managed & Fully Managed IT",
+            description: "Scalable IT support tailored to your team.",
+            points: [
+              "Augment your internal IT team (Co-Managed)",
+              "Complete IT outsourcing (Fully Managed)",
+              "Strategic vCIO & roadmap consulting"
             ]
           },
           {
@@ -128,6 +138,23 @@ export default function CloudITPage() {
         ]
       }}
     >
+      <div className="container mx-auto px-4 py-12">
+        <AEOBlock 
+          question="What is Co-Managed IT in Africa?"
+          directAnswer="Co-Managed IT is a partnership model where an enterprise's internal IT department collaborates with an external Managed Service Provider (MSP) like 912. Instead of replacing internal staff, the MSP handles complex infrastructure—such as cloud migrations, true zero-trust cybersecurity, and compliance—while the internal team focuses on daily business operations."
+          statistics={[
+            { value: "45%", label: "Reduction in downtime", source: "Gartner Peer Insights 2024" },
+            { value: "0", label: "Unauthorized branches", source: "912 Internal Metrics" }
+          ]}
+          expertQuote={{
+            text: "Most African enterprises don't need to fire their IT guy, they need to arm him with an enterprise cloud security grid so he stops drowning in server patches.",
+            author: "Technical Director",
+            role: "912 End-to-End Infrastructure"
+          }}
+          theme="light"
+        />
+      </div>
+
       <ProjectShowcase 
         items={cloudSolutions} 
         title="Explore Specific Solutions"

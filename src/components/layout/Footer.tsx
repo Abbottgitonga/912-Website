@@ -10,7 +10,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Column */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-2 group">
+            <Link to="/" className="flex items-center gap-2 group" aria-label="912 Home">
               <div className="w-12 h-12 bg-brand-orange rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-2xl">912</span>
               </div>
@@ -47,33 +47,33 @@ export function Footer() {
           {/* Services Column */}
           <div>
             <h4 className="font-heading font-bold text-sm uppercase tracking-wider mb-6 text-white/80">Services</h4>
-            <ul className="space-y-3 text-white/50 text-sm">
-              <li><Link to="/services/physical-security-infrastructure" className="hover:text-brand-orange transition-colors">Physical & Security Infrastructure</Link></li>
-              <li><Link to="/services/cloud-core-it" className="hover:text-brand-orange transition-colors">Cloud & Core IT</Link></li>
-              <li><Link to="/services/applications-software" className="hover:text-brand-orange transition-colors">Applications & Software</Link></li>
-              <li><Link to="/services/data-intelligence" className="hover:text-brand-orange transition-colors">Data & Intelligence</Link></li>
-              <li><Link to="/services" className="hover:text-brand-orange transition-colors font-medium text-white/70">All Services</Link></li>
+            <ul className="space-y-1 text-white/50 text-sm">
+              <li><Link to="/services/physical-security-infrastructure" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Physical & Security Infrastructure</Link></li>
+              <li><Link to="/services/cloud-core-it" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Cloud & Core IT</Link></li>
+              <li><Link to="/services/applications-software" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Applications & Software</Link></li>
+              <li><Link to="/services/data-intelligence" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Data & Intelligence</Link></li>
+              <li><Link to="/services" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors font-medium text-white/70">All Services</Link></li>
             </ul>
           </div>
 
           {/* Company Column */}
           <div>
             <h4 className="font-heading font-bold text-sm uppercase tracking-wider mb-6 text-white/80">Company</h4>
-            <ul className="space-y-3 text-white/50 text-sm">
-              <li><Link to="/about" className="hover:text-brand-orange transition-colors">Our Story</Link></li>
-              <li><Link to="/about/one-contract" className="text-brand-orange font-medium hover:text-brand-orange/80 transition-colors">The One Contract Model</Link></li>
-              <li><Link to="/about/team" className="hover:text-brand-orange transition-colors">Our Team</Link></li>
-              <li><Link to="/results" className="hover:text-brand-orange transition-colors">Case Studies</Link></li>
-              <li><Link to="/resources" className="hover:text-brand-orange transition-colors">Resources</Link></li>
-              <li><Link to="/contact" className="hover:text-brand-orange transition-colors">Contact</Link></li>
+            <ul className="space-y-1 text-white/50 text-sm">
+              <li><Link to="/about" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Our Story</Link></li>
+              <li><Link to="/about/one-contract" className="flex items-center min-h-[44px] text-brand-orange font-medium hover:text-brand-orange/80 transition-colors">The One Contract Model</Link></li>
+              <li><Link to="/about/team" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Our Team</Link></li>
+              <li><Link to="/results" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Case Studies</Link></li>
+              <li><Link to="/resources" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Resources</Link></li>
+              <li><Link to="/contact" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Contact</Link></li>
             </ul>
           </div>
 
           {/* Get In Touch Column */}
           <div className="space-y-6">
             <h4 className="font-heading font-bold text-sm uppercase tracking-wider mb-6 text-white/80">Get in touch</h4>
-            <div className="space-y-4 text-sm text-white/50">
-              <div className="flex items-start gap-3">
+            <div className="space-y-2 text-sm text-white/50">
+              <div className="flex items-start gap-3 min-h-[44px]">
                 <MapPin className="w-4 h-4 mt-0.5 text-brand-orange flex-shrink-0" aria-hidden="true" />
                 <div>
                   <p>The Chancery, 8th Floor</p>
@@ -82,11 +82,11 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-brand-orange flex-shrink-0" aria-hidden="true" />
-                <a href="tel:+254722974970" className="hover:text-white transition-colors">+254 722 974 970</a>
+                <a href="tel:+254722974970" className="flex items-center min-h-[44px] hover:text-white transition-colors" aria-label="Call 912 via +254 722 974 970">+254 722 974 970</a>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-brand-orange flex-shrink-0" aria-hidden="true" />
-                <a href="mailto:info@nineonetwo.co.ke" className="hover:text-white transition-colors">info@nineonetwo.co.ke</a>
+                <a href="mailto:info@nineonetwo.co.ke" className="flex items-center min-h-[44px] hover:text-white transition-colors" aria-label="Email Nine One Two at info@nineonetwo.co.ke">info@nineonetwo.co.ke</a>
               </div>
             </div>
             <Link to="/contact" className="w-full block">
@@ -101,10 +101,10 @@ export function Footer() {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30">
           <p>&copy; 2026 Nine One Two Limited. All rights reserved.</p>
           <nav aria-label="Legal links">
-            <ul className="flex flex-wrap justify-center gap-6">
-              <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
-              <li><Link to="/sitemap" className="hover:text-white transition-colors">Sitemap</Link></li>
+            <ul className="flex flex-wrap justify-center gap-2 md:gap-6">
+              <li><Link to="/privacy" className="flex items-center px-2 min-h-[44px] hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="flex items-center px-2 min-h-[44px] hover:text-white transition-colors">Terms of Service</Link></li>
+              <li><Link to="/sitemap" className="flex items-center px-2 min-h-[44px] hover:text-white transition-colors">Sitemap</Link></li>
             </ul>
           </nav>
         </div>
