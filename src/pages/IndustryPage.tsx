@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ServiceLayout } from '@/components/layout/ServiceLayout';
 import { Building2, Factory, Stethoscope, ShoppingBag, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { HoverBorderButton } from '@/components/ui/HoverBorderButton';
 
 const industries = {
   'financial-services': {
@@ -137,6 +138,19 @@ export default function IndustryPage() {
           { title: "Manage", description: "Continuous 24/7 monitoring and strategic roadmapping under One Contract." }
         ]
       }}
+      advantages={{
+        title: "The 912 Sector Advantage",
+        items: [
+          {
+            title: "Industry Expertise",
+            description: "Deep understanding of sector-specific compliance, security, and operational needs."
+          },
+          {
+            title: "Integrated One Contract",
+            description: "No fragmented vendors. One team, one architecture, one predictable monthly cost."
+          }
+        ]
+      }}
       outcomes={{
         title: "Proven Results",
         subtitle: industry.evidence.case,
@@ -152,16 +166,20 @@ export default function IndustryPage() {
           <h2 className="text-3xl md:text-5xl font-heading font-bold mb-8 italic">
             "Your industry runs on technology. We ensure that technology is documented, secured, and always available."
           </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild variant="orange" size="lg" className="rounded-none h-16 px-12 text-lg font-bold group">
-              <Link to="/contact">
-                Discuss Your Sector Leads
-                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-none h-16 px-12 text-lg font-bold border-white/20 hover:bg-white/10">
-              <Link to="/results">View All Case Studies</Link>
-            </Button>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <Link to="/contact">
+              <HoverBorderButton variant="orange" className="px-12 py-6 text-lg font-bold">
+                <span className="flex items-center gap-2">
+                  Discuss Your Sector Leads
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </HoverBorderButton>
+            </Link>
+            <Link to="/results">
+              <HoverBorderButton variant="blue" className="px-12 py-6 text-lg font-bold" theme="dark">
+                View All Case Studies
+              </HoverBorderButton>
+            </Link>
           </div>
         </div>
       </div>

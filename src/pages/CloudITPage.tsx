@@ -162,8 +162,8 @@ export default function CloudITPage() {
       />
       <FAQSection 
         faqs={cloudFaqs} 
-        title="Frequently Asked Questions" 
-        subtitle="Common questions about our Cloud & Core IT services"
+        title="Common Questions" 
+        subtitle="Answers to the most frequent inquiries about our Cloud & Core IT infrastructure"
         theme="light"
       />
     </ServiceLayout>

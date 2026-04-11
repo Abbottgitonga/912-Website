@@ -41,7 +41,7 @@ export function Hero() {
       </div>
 
       {/* Africa Map - Absolute on desktop, scaled specifically to occupy the right-hand hero space */}
-      <div className="absolute right-[-15%] top-[20%] xl:top-[25%] z-20 hidden lg:block w-[80%] xl:w-[75%] pointer-events-none opacity-90 max-w-none">
+      <div className="absolute right-[-10%] top-[20%] 2xl:top-[25%] z-20 hidden 2xl:block w-[70%] 2xl:w-[75%] pointer-events-none opacity-90 max-w-none">
         <AfricaMap />
       </div>
 
@@ -71,7 +71,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-white leading-[0.9] mb-12 tracking-tighter"
+            className="text-5xl md:text-7xl xl:text-7xl 2xl:text-8xl font-heading font-bold text-white leading-[0.9] mb-12 tracking-tighter"
           >
             Most companies are <br />
             <span className="text-brand-orange italic">overspending</span> on IT <br />
@@ -110,12 +110,12 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Africa Map Mobile View */}
+          {/* Africa Map Mobile/Tablet View - Drops below text earlier to prevent overlap */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="block lg:hidden w-full mt-16 pointer-events-none opacity-90 mx-auto"
+            className="block 2xl:hidden w-full mt-16 pointer-events-none opacity-90 mx-auto"
           >
             <AfricaMap />
           </motion.div>

@@ -51,6 +51,7 @@ const IndustryPage = React.lazy(() => import('@/pages/IndustryPage'));
 const SitemapPage = React.lazy(() => import('@/pages/SitemapPage'));
 const PrivacyPolicyPage = React.lazy(() => import('@/pages/PrivacyPolicyPage'));
 const TermsConditionsPage = React.lazy(() => import('@/pages/TermsConditionsPage'));
+const FAQPage = React.lazy(() => import('@/pages/FAQPage'));
 
 // Blog System
 const BlogIndexPage = React.lazy(() => import('@/pages/blog/BlogIndexPage'));
@@ -145,14 +146,14 @@ function NotFoundPage() {
         </p>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mt-8">
+        <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto mt-8 justify-center">
           <Link to="/" className="w-full sm:w-auto">
-            <HoverBorderButton variant="blue" className="w-full sm:w-auto justify-center">
+            <HoverBorderButton variant="blue" className="w-full sm:w-auto justify-center px-10 py-4 text-lg font-bold">
               Back to Homepage
             </HoverBorderButton>
           </Link>
           <Link to="/services" className="w-full sm:w-auto">
-            <HoverBorderButton variant="orange" className="w-full sm:w-auto justify-center" theme="light">
+            <HoverBorderButton variant="orange" className="w-full sm:w-auto justify-center px-10 py-4 text-lg font-bold" theme="light">
               Explore Our Services
             </HoverBorderButton>
           </Link>
@@ -227,6 +228,7 @@ export default function App() {
               <Route path="/privacy" element={<PrivacyPolicyPage />} />
               <Route path="/terms" element={<TermsConditionsPage />} />
               <Route path="/sitemap" element={<SitemapPage />} />
+              <Route path="/faq" element={<FAQPage />} />
 
               {/* 404 */}
               <Route path="*" element={<NotFoundPage />} />

@@ -80,6 +80,7 @@ export function Footer() {
               <li><Link to="/about/one-contract" className="flex items-center min-h-[44px] text-brand-orange font-medium hover:text-brand-orange/80 transition-colors">The One Contract Model</Link></li>
               <li><Link to="/about/team" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Our Team</Link></li>
               <li><Link to="/results" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Case Studies</Link></li>
+              <li><Link to="/faq" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">FAQ</Link></li>
               <li><Link to="/resources" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Resources</Link></li>
               <li><Link to="/contact" className="flex items-center min-h-[44px] hover:text-brand-orange transition-colors">Contact</Link></li>
             </ul>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ScrollReveal } from '@/components/layout/ScrollReveal';
 import { Button } from '@/components/ui/button';
+import { HoverBorderButton } from '@/components/ui/HoverBorderButton';
 import { ArrowRight } from 'lucide-react';
 
 const news = [
@@ -37,9 +38,9 @@ export function LatestNews() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
           <ScrollReveal direction="right" className="max-w-2xl">
-            <h2 className="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-[0.9] mb-8">
-              LATEST <br />
-              <span className="text-brand-orange">INSIGHTS.</span>
+            <h2 className="text-5xl md:text-7xl font-heading font-bold tracking-tighter leading-[0.9] mb-8 uppercase">
+              The 912 <br />
+              <span className="text-brand-orange">Blog.</span>
             </h2>
             <p className="text-xl text-slate-500 font-medium">
               Expert perspectives on technology, security, and 
@@ -47,12 +48,11 @@ export function LatestNews() {
             </p>
           </ScrollReveal>
           <ScrollReveal direction="left">
-            <Button asChild variant="outline" className="border-brand-dark text-brand-dark hover:bg-brand-dark hover:text-white rounded-none px-8 py-6 text-lg font-bold group">
-              <Link to="/resources">
-                All News
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-              </Link>
-            </Button>
+            <Link to="/blog">
+              <HoverBorderButton variant="blue" className="px-8 py-6 text-lg font-bold" theme="light">
+                View All Insights
+              </HoverBorderButton>
+            </Link>
           </ScrollReveal>
         </div>
 

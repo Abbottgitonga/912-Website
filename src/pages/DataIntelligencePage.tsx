@@ -135,8 +135,8 @@ export default function DataIntelligencePage() {
       />
       <FAQSection 
         faqs={dataFaqs} 
-        title="Frequently Asked Questions" 
-        subtitle="Common questions about our Data & Intelligence services"
+        title="Common Questions" 
+        subtitle="Answers to the most frequent inquiries about our Data & Intelligence services"
         theme="light"
       />
     </ServiceLayout>

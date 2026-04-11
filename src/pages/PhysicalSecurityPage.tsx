@@ -135,8 +135,8 @@ export default function PhysicalSecurityPage() {
       />
       <FAQSection 
         faqs={securityFaqs} 
-        title="Frequently Asked Questions" 
-        subtitle="Common questions about our Physical Security services"
+        title="Common Questions" 
+        subtitle="Answers to the most frequent inquiries about our Physical Security services"
         theme="light"
       />
     </ServiceLayout>

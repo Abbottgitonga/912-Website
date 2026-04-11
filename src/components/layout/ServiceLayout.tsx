@@ -59,7 +59,12 @@ function AnimatedStat({ value, label, delay }: { value: string; label: string; d
         whileInView={{ y: 0 }}
         transition={{ duration: 0.8, delay: delay + 0.1 }}
         viewport={{ once: true }}
-        className="text-5xl md:text-6xl font-heading font-bold mb-2"
+        className={cn(
+          "font-heading font-bold mb-2 tracking-tighter leading-tight",
+          value.length > 15 ? "text-3xl" : 
+          value.length > 10 ? "text-4xl" : 
+          "text-5xl md:text-6xl"
+        )}
       >
         {value}
       </motion.div>
@@ -175,7 +180,7 @@ export function ServiceLayout({
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-blue/10 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3" />
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-orange/5 rounded-full blur-[150px] translate-y-1/3 -translate-x-1/3" />
 
-          {/* Original Image integration if provided, heavily overlayed */}
+          {/* Original Image integration if provided - increased visibility as requested */}
           {hero.image && (
             <div className="absolute inset-0 z-0">
               <img 
@@ -183,9 +188,9 @@ export function ServiceLayout({
                 alt={hero.imageAlt || `${hero.title} - 912 Enterprise IT Infrastructure Africa`}
                 fetchPriority="high"
                 loading="eager"
-                className="w-full h-full object-cover opacity-20 grayscale mix-blend-overlay"
+                className="w-full h-full object-cover opacity-60 mix-blend-screen"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/95 to-brand-dark/80" />
+              <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/70 to-brand-dark/40" />
             </div>
           )}
         </div>
@@ -211,12 +216,12 @@ export function ServiceLayout({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h1 className="text-5xl sm:text-6xl lg:text-[4.5rem] xl:text-[5.5rem] font-heading font-black mb-8 leading-[0.9] tracking-tighter uppercase text-white break-words hyphens-auto">
+                <h1 className="text-5xl sm:text-6xl lg:text-[4.5rem] xl:text-[5.5rem] font-heading font-black mb-8 leading-[0.9] tracking-tighter uppercase text-white break-words">
                   {hero.title.split(' ').map((word, i) => {
                     const isOrange = word === 'Infrastructure' || word === 'Reporting' || word === 'Apps' || word === 'Software' || word === 'Custom';
                     const isBlue = word === 'Security' || word === 'Intelligence' || word === 'Recovery' || word === 'Cloud';
                     return (
-                      <span key={i} className="block">
+                      <span key={i} className={cn("block", isOrange ? "whitespace-nowrap" : "")}>
                         {isBlue ? (
                           <span className="text-brand-blue">{word}</span>
                         ) : isOrange ? (
@@ -363,9 +368,11 @@ export function ServiceLayout({
                       )} 
                     />
                   </div>
-                  <Button type="submit" className="w-full bg-brand-orange hover:bg-brand-orange/90 text-white rounded-xl py-8 text-xl font-bold transition-transform active:scale-[0.98]">
-                    Send Request
-                  </Button>
+                  <Link to="/contact" className="w-full">
+                    <HoverBorderButton variant="orange" className="w-full py-8 text-xl font-bold" containerClassName="w-full">
+                      Send Request
+                    </HoverBorderButton>
+                  </Link>
                 </form>
               </motion.div>
             </div>
@@ -381,8 +388,6 @@ export function ServiceLayout({
 
       {/* Explore Specific Solutions (Children) */}
       {children}
-
-      {/* Capabilities Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mb-16">
@@ -570,7 +575,7 @@ export function ServiceLayout({
               <h2 className="text-4xl font-heading font-bold mb-4">{outcomes.title}</h2>
               <p className="text-xl text-white/80 mb-8">{outcomes.subtitle}</p>
               <Link to="/contact">
-                <HoverBorderButton variant="orange" containerClassName="border-white/30">
+                <HoverBorderButton variant="orange" containerClassName="border-white/30" className="px-10 py-4 text-xl font-bold">
                   <span className="flex items-center gap-2">
                     Speak to Our Experts
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -586,6 +591,9 @@ export function ServiceLayout({
           </div>
         </div>
       </section>
+
+      {/* Explore Specific Solutions (Children) - Now at the very bottom as requested */}
+      {children}
 
     </div>
   );

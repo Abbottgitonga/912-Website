@@ -149,8 +149,8 @@ export default function ApplicationsSoftwarePage() {
       />
       <FAQSection 
         faqs={appFaqs} 
-        title="Frequently Asked Questions" 
-        subtitle="Common questions about our Software Development services"
+        title="Common Questions" 
+        subtitle="Answers to the most frequent inquiries about our Software Development services"
         theme="light"
       />
     </ServiceLayout>

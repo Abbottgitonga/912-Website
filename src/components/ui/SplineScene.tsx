@@ -16,14 +16,14 @@ export function SplineSceneAlternative() {
         }}
         className="relative w-64 h-64 preserve-3d"
       >
-        {/* Central glowing core */}
-        <div className="absolute inset-x-1/4 inset-y-1/4 bg-brand-orange/40 rounded-full blur-3xl animate-pulse" />
+        {/* Central bold core */}
+        <div className="absolute inset-x-1/4 inset-y-1/4 bg-brand-orange rounded-full shadow-[0_0_50px_rgba(255,102,0,0.8)] animate-pulse" />
         
-        {/* Floating elements */}
+        {/* Floating elements - Solid and High Contrast */}
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute inset-0 border border-brand-blue/30 bg-brand-dark/10 backdrop-blur-sm rounded-xl"
+            className="absolute inset-0 border-2 border-brand-blue bg-brand-dark rounded-xl shadow-lg"
             initial={{
               rotateX: i * 60,
               rotateY: i * 60,
@@ -34,7 +34,7 @@ export function SplineSceneAlternative() {
               rotateY: [i * 60, i * 60 + 180, i * 60 + 360],
             }}
             transition={{
-              duration: 15,
+              duration: 12,
               repeat: Infinity,
               ease: "linear",
               delay: i * -2
@@ -43,8 +43,8 @@ export function SplineSceneAlternative() {
               transformStyle: 'preserve-3d',
             }}
           >
-            {/* Inner detail */}
-            <div className="absolute inset-4 border border-brand-orange/20 rounded-lg" />
+            {/* Inner bold detail */}
+            <div className="absolute inset-4 border-2 border-brand-orange rounded-lg bg-brand-blue/10" />
           </motion.div>
         ))}
       </motion.div>
