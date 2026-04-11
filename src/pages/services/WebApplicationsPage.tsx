@@ -10,7 +10,7 @@ export default function WebApplicationsPage() {
         description: "Explore our specialized Web Applications capabilities, designed to scale with your business and deliver measurable ROI.",
         breadcrumbs: [
           { label: "Home", href: "/" },
-          { label: "Expertise", href: "/expertise" },
+          { label: "Services", href: "/services" },
           { label: "Web Applications" }
         ]
       }}

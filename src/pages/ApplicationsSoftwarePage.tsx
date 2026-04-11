@@ -18,7 +18,7 @@ const appSolutions = [
     description: "Custom-built web platforms designed for performance, security, and exceptional user experience.",
     href: "/expertise/web-applications",
     category: "Development",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800"
+    image: "/images/heroes/software-dev.png"
   },
   {
     id: "mobile-applications",
@@ -26,7 +26,7 @@ const appSolutions = [
     description: "Native and cross-platform mobile apps.",
     href: "/expertise/mobile-applications",
     category: "Development",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800"
+    image: "/images/heroes/software-dev.png"
   },
   {
     id: "saas-platforms",
@@ -34,7 +34,7 @@ const appSolutions = [
     description: "End-to-end development of software products.",
     href: "/expertise/saas-platforms",
     category: "Product",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+    image: "/images/heroes/software-dev.png"
   },
   {
     id: "erp-systems",
@@ -42,7 +42,7 @@ const appSolutions = [
     description: "Integrated business management software.",
     href: "/expertise/erp-systems",
     category: "Enterprise",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800"
+    image: "/images/heroes/software-dev.png"
   }
 ];
 
@@ -56,7 +56,7 @@ export default function ApplicationsSoftwarePage() {
         animation: <SplineSceneAlternative />,
         breadcrumbs: [
           { label: "Home", href: "/" },
-          { label: "Expertise", href: "/expertise" },
+          { label: "Services", href: "/services" },
           { label: "Applications & Software" }
         ]
       }}

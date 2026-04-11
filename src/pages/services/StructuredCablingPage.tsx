@@ -10,7 +10,7 @@ export default function StructuredCablingPage() {
         description: "Explore our specialized Structured Cabling capabilities, designed to scale with your business and deliver measurable ROI.",
         breadcrumbs: [
           { label: "Home", href: "/" },
-          { label: "Expertise", href: "/expertise" },
+          { label: "Services", href: "/services" },
           { label: "Structured Cabling" }
         ]
       }}

@@ -134,12 +134,12 @@ export function ProjectShowcase({
                 animate={{
                   opacity: 1,
                   scale: 1,
-                  x: mousePosition.x - 160, // center horizontally roughly
-                  y: mousePosition.y - 100, // center vertically roughly
+                  x: mousePosition.x + 30, // offset right to not cover text
+                  y: mousePosition.y + 30, // offset bottom to not cover text
                 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ type: 'spring', damping: 20, stiffness: 150 }}
-                className="pointer-events-none absolute left-0 top-0 z-0 hidden lg:block overflow-hidden rounded-xl shadow-2xl"
+                className="pointer-events-none absolute left-0 top-0 z-50 hidden lg:block overflow-hidden rounded-xl shadow-2xl"
                 style={{ width: '320px', height: '200px' }}
               >
                 <div className="absolute inset-0 bg-brand-dark/20 z-10 mix-blend-overlay" />

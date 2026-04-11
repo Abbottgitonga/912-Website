@@ -61,7 +61,7 @@ export function LogoCloud({ className, variant = 'dark' }: LogoCloudProps) {
                   'pointer-events-none h-8 md:h-10 w-auto select-none object-contain',
                   isLight
                     ? 'opacity-40 hover:opacity-80 grayscale hover:grayscale-0'
-                    : 'opacity-50 hover:opacity-90 brightness-0 invert',
+                    : 'opacity-50 hover:opacity-90 mix-blend-screen',
                   'transition-all duration-300'
                 )}
               />

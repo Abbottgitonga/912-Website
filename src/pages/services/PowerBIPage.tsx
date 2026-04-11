@@ -15,7 +15,7 @@ export default function PowerBIPage() {
         animation: <AnalyticsAnimation />,
         breadcrumbs: [
           { label: "Home", href: "/" },
-          { label: "Expertise", href: "/expertise" },
+          { label: "Services", href: "/services" },
           { label: "Power BI & Reporting" }
         ]
       }}

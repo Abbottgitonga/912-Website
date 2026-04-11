@@ -15,7 +15,7 @@ export default function CCTVPage() {
         animation: <CCTVAnimation />,
         breadcrumbs: [
           { label: "Home", href: "/" },
-          { label: "Expertise", href: "/expertise" },
+          { label: "Services", href: "/services" },
           { label: "CCTV & Surveillance" }
         ]
       }}

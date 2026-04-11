@@ -14,7 +14,7 @@ export default function CloudPage() {
         animation: <CloudAnimation />,
         breadcrumbs: [
           { label: "Home", href: "/" },
-          { label: "Expertise", href: "/expertise" },
+          { label: "Services", href: "/services" },
           { label: "Cloud & Core IT" }
         ]
       }}

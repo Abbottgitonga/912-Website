@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { HoverBorderButton } from '@/components/ui/HoverBorderButton';
 import { Link } from 'react-router-dom';
 import { PartnershipTicker } from '@/components/ui/PartnershipTicker';
+import { LogoCloud } from '@/components/home/LogoCloud';
 import { cn } from '@/lib/utils';
 
 interface ServiceLayoutProps {
@@ -372,8 +373,14 @@ export function ServiceLayout({
         </div>
       </section>
 
+      {/* Stand-in Logos */}
+      <LogoCloud variant={theme} />
+
       {/* Global Partnership Ticker */}
       <PartnershipTicker />
+
+      {/* Explore Specific Solutions (Children) */}
+      {children}
 
       {/* Capabilities Section */}
       <section className="py-24 bg-gray-50">
@@ -543,8 +550,6 @@ export function ServiceLayout({
           </div>
         </div>
       </section>
-
-      {children}
 
       {/* Outcomes Section — with animated stats */}
       <section className="py-24 bg-brand-blue text-white relative overflow-hidden">

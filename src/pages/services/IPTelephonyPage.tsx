@@ -10,7 +10,7 @@ export default function IPTelephonyPage() {
         description: "Explore our specialized IP Telephony capabilities, designed to scale with your business and deliver measurable ROI.",
         breadcrumbs: [
           { label: "Home", href: "/" },
-          { label: "Expertise", href: "/expertise" },
+          { label: "Services", href: "/services" },
           { label: "IP Telephony" }
         ]
       }}

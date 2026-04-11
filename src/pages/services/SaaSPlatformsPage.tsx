@@ -10,7 +10,7 @@ export default function SaaSPlatformsPage() {
         description: "Explore our specialized SaaS Platforms capabilities, designed to scale with your business and deliver measurable ROI.",
         breadcrumbs: [
           { label: "Home", href: "/" },
-          { label: "Expertise", href: "/expertise" },
+          { label: "Services", href: "/services" },
           { label: "SaaS Platforms" }
         ]
       }}

@@ -21,7 +21,7 @@ const cloudSolutions = [
     description: "Scalable public, private, and hybrid cloud architectures.",
     href: "/expertise/cloud",
     category: "Infrastructure",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+    image: "/images/heroes/cloud-it.png"
   },
   {
     id: "backup-recovery",
@@ -29,7 +29,7 @@ const cloudSolutions = [
     description: "Business continuity and disaster recovery planning.",
     href: "/expertise/backup-&-recovery",
     category: "Resilience",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800"
+    image: "/images/heroes/cloud-it.png"
   }
 ];
 
@@ -40,10 +40,10 @@ export default function CloudITPage() {
         title: "Cloud & Core IT Infrastructure",
         subtitle: "Resilient Environments | Unified Communications | Enterprise Security",
         description: "We build the digital backbone of your business. Whether you need Fully Managed IT to outsource your entire technology stack, or Co-Managed IT to empower your existing internal team, our engineers ensure your operations are scalable, secure, and always connected.",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000",
+        image: "/images/heroes/cloud-it.png",
         breadcrumbs: [
           { label: "Home", href: "/" },
-          { label: "Expertise", href: "/expertise" },
+          { label: "Services", href: "/services" },
           { label: "Cloud & Core IT" }
         ]
       }}

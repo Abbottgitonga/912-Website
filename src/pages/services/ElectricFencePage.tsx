@@ -10,7 +10,7 @@ export default function ElectricFencePage() {
         description: "Explore our specialized Electric Fence & Perimeter capabilities, designed to scale with your business and deliver measurable ROI.",
         breadcrumbs: [
           { label: "Home", href: "/" },
-          { label: "Expertise", href: "/expertise" },
+          { label: "Services", href: "/services" },
           { label: "Electric Fence & Perimeter" }
         ]
       }}

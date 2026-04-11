@@ -20,7 +20,7 @@ const dataSolutions = [
     description: "Custom dashboards and automated reporting for enterprise leadership.",
     href: "/expertise/power-bi-&-reporting",
     category: "Analytics",
-    image: "https://images.unsplash.com/photo-1551288049-bbbda50a13a9?auto=format&fit=crop&q=80&w=800"
+    image: "/images/heroes/data-intelligence.png"
   },
   {
     id: "data-engineering",
@@ -28,7 +28,7 @@ const dataSolutions = [
     description: "Robust data warehousing and ETL pipeline automation.",
     href: "/expertise/data-engineering",
     category: "Architecture",
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800"
+    image: "/images/heroes/data-intelligence.png"
   }
 ];
 
@@ -39,10 +39,10 @@ export default function DataIntelligencePage() {
         title: "Data & Intelligence",
         subtitle: "Actionable Insights | Real-time Analytics | AI Modeling",
         description: "Transform your raw data into your most valuable asset. We help you see what others miss and act with confidence through advanced analytics and Power BI solutions.",
-        image: "https://images.unsplash.com/photo-1551288049-bbbda50a13a9?auto=format&fit=crop&q=80&w=2000",
+        image: "/images/heroes/data-intelligence.png",
         breadcrumbs: [
           { label: "Home", href: "/" },
-          { label: "Expertise", href: "/expertise" },
+          { label: "Services", href: "/services" },
           { label: "Data & Intelligence" }
         ]
       }}

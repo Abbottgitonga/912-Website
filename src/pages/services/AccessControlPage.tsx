@@ -15,7 +15,7 @@ export default function AccessControlPage() {
         animation: <AccessControlAnimation />,
         breadcrumbs: [
           { label: "Home", href: "/" },
-          { label: "Expertise", href: "/expertise" },
+          { label: "Services", href: "/services" },
           { label: "Access Control" }
         ]
       }}

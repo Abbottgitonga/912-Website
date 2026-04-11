@@ -20,7 +20,7 @@ const securitySolutions = [
     description: "Comprehensive entry management and biometric solutions.",
     href: "/expertise/access-control",
     category: "Physical Security",
-    image: "https://images.unsplash.com/photo-1557597774-9d2739f8f01f?auto=format&fit=crop&q=80&w=800"
+    image: "/images/heroes/physical-security.png"
   },
   {
     id: "cctv-surveillance",
@@ -28,7 +28,7 @@ const securitySolutions = [
     description: "AI-powered visual intelligence and remote monitoring.",
     href: "/expertise/cctv-&-surveillance",
     category: "Surveillance",
-    image: "https://images.unsplash.com/photo-1496368077930-c1e31b4e5b44?auto=format&fit=crop&q=80&w=800"
+    image: "/images/heroes/physical-security.png"
   }
 ];
 
@@ -39,10 +39,10 @@ export default function PhysicalSecurityPage() {
         title: "Physical & Security Infrastructure",
         subtitle: "Unified Protection | AI-Driven Surveillance | Intelligent Access",
         description: "We design and implement comprehensive physical security ecosystems that protect your people, assets, and data. From server room infrastructure to pan-African surveillance networks.",
-        image: "https://images.unsplash.com/photo-1557597774-9d2739f8f01f?auto=format&fit=crop&q=80&w=2000",
+        image: "/images/heroes/physical-security.png",
         breadcrumbs: [
           { label: "Home", href: "/" },
-          { label: "Expertise", href: "/expertise" },
+          { label: "Services", href: "/services" },
           { label: "Physical & Security" }
         ]
       }}
