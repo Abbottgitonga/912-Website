@@ -10,28 +10,60 @@ import { SchemaManager } from '@/components/seo/SchemaManager';
 
 const globalOrganizationSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "912",
-  "image": "https://912.africa/logo.png",
-  "@id": "https://912.africa",
-  "url": "https://912.africa",
-  "telephone": "+254000000000",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "12"
+  "@type": "ProfessionalService",
+  "name": "Nine One Two (912)",
+  "alternateName": "912",
+  "description": "Pan-African Managed IT Services Provider and Systems Integrator. End-to-end enterprise technology management — physical security, cloud & IT, custom software, and data intelligence — under a single One Contract model across 10 African countries.",
+  "image": "https://nineonetwo.co.ke/images/logo-912.png",
+  "@id": "https://nineonetwo.co.ke",
+  "url": "https://nineonetwo.co.ke",
+  "telephone": "+254111047120",
+  "foundingDate": "2013",
+  "founder": {
+    "@type": "Person",
+    "name": "Njuguna Waitara",
+    "jobTitle": "Founder & CEO"
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Technology Hub",
     "addressLocality": "Nairobi",
     "addressRegion": "Nairobi",
     "postalCode": "00100",
     "addressCountry": "KE"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -1.286389,
+    "longitude": 36.817223
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "Kenya" },
+    { "@type": "Country", "name": "Senegal" },
+    { "@type": "Country", "name": "Rwanda" },
+    { "@type": "Country", "name": "Ghana" },
+    { "@type": "Country", "name": "DR Congo" },
+    { "@type": "Country", "name": "Angola" },
+    { "@type": "Country", "name": "Burkina Faso" },
+    { "@type": "Country", "name": "Benin" },
+    { "@type": "Country", "name": "Mali" },
+    { "@type": "Country", "name": "Burundi" }
+  ],
+  "knowsAbout": [
+    "Managed IT Services",
+    "CCTV Installation",
+    "Access Control Systems",
+    "Cloud Migration",
+    "Cybersecurity",
+    "Custom Software Development",
+    "ERP Systems",
+    "Power BI Consulting",
+    "Data Intelligence",
+    "IT Infrastructure Africa"
+  ],
   "sameAs": [
     "https://www.linkedin.com/company/912-tech"
-  ]
+  ],
+  "priceRange": "$$$$"
 };
 
 // Lazy load route pages for bundle splitting
@@ -55,6 +87,7 @@ const FAQPage = React.lazy(() => import('@/pages/FAQPage'));
 
 // Blog System
 const BlogIndexPage = React.lazy(() => import('@/pages/blog/BlogIndexPage'));
+const BlogPostPage = React.lazy(() => import('@/pages/blog/BlogPostPage'));
 
 // Case study pages
 const SenegalFactoryRescuePage = React.lazy(() => import('@/pages/results/SenegalFactoryRescuePage'));
@@ -180,6 +213,7 @@ export default function App() {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/resources" element={<ResourcesPage />} />
               <Route path="/blog" element={<BlogIndexPage />} />
+              <Route path="/blog/:id" element={<BlogPostPage />} />
 
               {/* Services hub */}
               <Route path="/services" element={<ServicesHubPage />} />

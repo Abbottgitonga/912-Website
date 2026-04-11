@@ -3,6 +3,9 @@ import { ServiceLayout } from '@/components/layout/ServiceLayout';
 import { ProjectShowcase } from '@/components/ui/ProjectShowcase';
 import { FAQSection } from '@/components/ui/FAQSection';
 import { SplineSceneAlternative } from '@/components/ui/SplineScene';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { FAQSchema } from '@/components/seo/FAQSchema';
+import { ServiceSchema } from '@/components/seo/ServiceSchema';
 
 const appFaqs = [
   { question: "How much does custom software cost?", answer: "Custom software costs depend entirely on the scope of the project, features required, platforms (web vs. mobile), and integration needs. We provide a transparent scope of work and a fixed-price contract after our initial discovery phase." },
@@ -48,6 +51,17 @@ const appSolutions = [
 
 export default function ApplicationsSoftwarePage() {
   return (
+    <>
+      <SEOHead
+        title="Custom Software Development Kenya — Web, Mobile & SaaS | 912"
+        description="Custom web applications, mobile apps, SaaS platforms, and ERP systems built for African enterprises. Full lifecycle development from MVP to enterprise scale, managed under one contract."
+      />
+      <FAQSchema faqs={appFaqs} id="apps-faq-schema" />
+      <ServiceSchema
+        name="Applications & Software Development"
+        description="Custom web applications, mobile apps, SaaS platforms, and ERP systems for African enterprises."
+        url="/services/applications-software"
+      />
     <ServiceLayout
       hero={{
         title: "Applications & Software",
@@ -141,6 +155,19 @@ export default function ApplicationsSoftwarePage() {
           { value: "100%", label: "Data Ownership" }
         ]
       }}
+      aeo={{
+        question: "When should an enterprise build custom software vs buying SaaS?",
+        directAnswer: "If a business process creates your unique competitive advantage, build custom software to own the IP. If the process is a commodity (like payroll or HR), buy SaaS. 912 Tech specializes in building bespoke enterprise applications that snap seamlessly into legacy systems using the 'Strangler Fig' pattern, ensuring zero operational downtime.",
+        statistics: [
+          { value: "40%", label: "Increased workflow efficiency", source: "912 Client Deployments" },
+          { value: "100%", label: "Intellectual Property Ownership", source: "Custom Dev Standard" }
+        ],
+        expertQuote: {
+          text: "Countless IT executives fall into the trap of a massive, all-at-once rewrite of their core systems. We employ strict agile microservices so everyday business continues uninterrupted while the legacy monolith is replaced.",
+          author: "Emmanuel Kiptoo",
+          role: "Director of Software Engineering, 912"
+        }
+      }}
     >
       <ProjectShowcase 
         items={appSolutions} 
@@ -154,5 +181,6 @@ export default function ApplicationsSoftwarePage() {
         theme="light"
       />
     </ServiceLayout>
+    </>
   );
 }

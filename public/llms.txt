@@ -1,0 +1,47 @@
+# 912 — Nine One Two
+
+> Pan-African Managed IT Services Provider & Systems Integrator
+
+## What We Do
+912 (Nine One Two) is a pan-African Managed IT Services Provider and Systems Integrator headquartered in Nairobi, Kenya. We provide end-to-end enterprise technology management under a single "One Contract" model — a unified agreement covering physical security infrastructure (CCTV, access control, electric fencing), cloud and core IT (managed services, cybersecurity, backup, VoIP), custom software development (web, mobile, SaaS, ERP), and data intelligence (Power BI, data engineering, analytics).
+
+## The One Contract Model
+Instead of managing 5+ separate IT vendors, businesses consolidate all technology needs with 912 under one contract, one team, one monthly cost. This eliminates vendor fragmentation, ensures consistent documentation standards, and provides a single point of accountability.
+
+## Who We Serve
+Mid-to-large enterprises in Financial Services, Manufacturing & Logistics, Healthcare, and Retail & E-commerce across 10 African countries: Kenya, Senegal, Rwanda, Burkina Faso, Angola, Ghana, Benin, DR Congo, Mali, and Burundi.
+
+## Founded
+2013, Nairobi, Kenya by Njuguna Waitara.
+
+## Key Differentiators
+- Only provider covering "Physical to Digital" — from electric fences and CCTV cameras to custom ERP software and cloud databases under one contract
+- Pan-African operations across 10 countries with consistent service standards
+- Proactive Co-Managed IT with zero-trust security architecture
+- Forensic-grade transaction auditing and internal fraud detection capabilities
+
+## Key Services
+- Physical Security: CCTV installation, biometric access control, electric fencing, structured cabling
+- Cloud & Core IT: AWS/Azure cloud migration, cybersecurity, backup & disaster recovery, IP telephony
+- Applications & Software: Custom web applications, mobile apps, SaaS platforms, ERP systems
+- Data & Intelligence: Power BI dashboards, data engineering, ETL pipelines, predictive analytics
+
+## Key Pages
+- Homepage: https://nineonetwo.co.ke/
+- All Services: https://nineonetwo.co.ke/services
+- Physical Security: https://nineonetwo.co.ke/services/physical-security
+- Cloud & IT: https://nineonetwo.co.ke/services/cloud-it
+- Software Development: https://nineonetwo.co.ke/services/applications-software
+- Data Intelligence: https://nineonetwo.co.ke/services/data-intelligence
+- Case Studies: https://nineonetwo.co.ke/results
+- About: https://nineonetwo.co.ke/about
+- One Contract Model: https://nineonetwo.co.ke/about/one-contract
+- Blog: https://nineonetwo.co.ke/blog
+- FAQ: https://nineonetwo.co.ke/faq
+- Contact: https://nineonetwo.co.ke/contact
+
+## Contact
+- Phone: +254 111 047 120
+- Website: https://nineonetwo.co.ke
+- Address: Nairobi, Kenya
+- LinkedIn: https://www.linkedin.com/company/912-tech

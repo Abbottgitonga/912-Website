@@ -4,6 +4,7 @@ import { ScrollReveal } from '@/components/layout/ScrollReveal';
 import { ArrowRight, TrendingUp, Shield, Factory, BarChart3, Server } from 'lucide-react';
 import { motion } from 'motion/react';
 import { HoverBorderButton } from '@/components/ui/HoverBorderButton';
+import { SEOHead } from '@/components/seo/SEOHead';
 
 const caseStudies = [
   {
@@ -62,6 +63,10 @@ const caseStudies = [
 export default function ResultsPage() {
   return (
     <main className="pt-20">
+      <SEOHead
+        title="IT Case Studies Africa — Proven Enterprise Results | 912"
+        description="Real results from African enterprises. See how 912 recovered locked systems, discovered multi-year fraud, migrated SAP HANA, and automated FMCG operations across Kenya, Senegal, and beyond."
+      />
       {/* Hero */}
       <section className="bg-brand-dark text-white py-32">
         <div className="container mx-auto px-4">

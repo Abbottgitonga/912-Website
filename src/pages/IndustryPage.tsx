@@ -4,6 +4,7 @@ import { ServiceLayout } from '@/components/layout/ServiceLayout';
 import { Building2, Factory, Stethoscope, ShoppingBag, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { HoverBorderButton } from '@/components/ui/HoverBorderButton';
+import { SEOHead } from '@/components/seo/SEOHead';
 
 const industries = {
   'financial-services': {
@@ -93,6 +94,11 @@ export default function IndustryPage() {
   }
 
   return (
+    <>
+      <SEOHead
+        title={`IT Solutions for ${industry.title} in Kenya & Africa | 912`}
+        description={industry.description + ` Enterprise IT services tailored for ${industry.title.toLowerCase()} businesses across 10 African countries.`}
+      />
     <ServiceLayout
       hero={{
         title: industry.title,
@@ -184,5 +190,6 @@ export default function IndustryPage() {
         </div>
       </div>
     </ServiceLayout>
+    </>
   );
 }

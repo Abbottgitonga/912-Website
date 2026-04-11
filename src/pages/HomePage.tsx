@@ -9,6 +9,8 @@ import { AfricaMap } from '@/components/home/AfricaMap';
 import { ArrowRight } from 'lucide-react';
 import { Testimonials } from '@/components/home/Testimonials';
 import { FAQSection } from '@/components/ui/FAQSection';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { FAQSchema } from '@/components/seo/FAQSchema';
 
 const homeFaqs = [
   { question: "What exactly is the One Contract Model?", answer: "Instead of managing separate vendors for CCTV, cloud, cybersecurity, and software, 912 provides a single comprehensive contract covering all your technology needs. One team, one point of contact, and full accountability." },
@@ -20,6 +22,12 @@ const homeFaqs = [
 export default function HomePage() {
   return (
     <main className="pt-0">
+      <SEOHead
+        title="Managed IT Services Kenya & Africa — One Contract, Every Need | 912"
+        description="912 designs, secures, and manages enterprise IT across 10 African countries. CCTV, cloud migration, custom software, Power BI — one contract, one partner. Headquartered in Nairobi since 2013."
+        canonical="https://nineonetwo.co.ke/"
+      />
+      <FAQSchema faqs={homeFaqs} id="home-faq-schema" />
       <Hero />
       <LogoCloud variant="dark" />
       

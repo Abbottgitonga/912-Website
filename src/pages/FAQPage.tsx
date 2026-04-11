@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { FAQSection } from '@/components/ui/FAQSection';
 import { HoverBorderButton } from '@/components/ui/HoverBorderButton';
 import { HelpCircle, Shield, Zap, Tool, Users, MessageSquare } from 'lucide-react';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { FAQSchema } from '@/components/seo/FAQSchema';
 
 const generalFaqs = [
   {
@@ -49,8 +51,14 @@ const categories = [
 ];
 
 export default function FAQPage() {
+  const allFaqs = [...generalFaqs, ...securityFaqs, ...developmentFaqs, ...processFaqs];
   return (
     <main className="pt-32 pb-20 bg-white">
+      <SEOHead
+        title="Frequently Asked Questions — Managed IT, Security & Cloud Kenya | 912"
+        description="Answers to common questions about 912's One Contract Model, managed IT services, physical security, cloud migration, cybersecurity, and custom software development in Kenya and Africa."
+      />
+      <FAQSchema faqs={allFaqs} id="faq-page-schema" />
       {/* Hero */}
       <section className="container mx-auto px-4 py-20 text-center">
         <motion.div

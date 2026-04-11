@@ -5,6 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ProjectShowcase } from '@/components/ui/ProjectShowcase';
 import { FAQSection } from '@/components/ui/FAQSection';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { FAQSchema } from '@/components/seo/FAQSchema';
+import { ServiceSchema } from '@/components/seo/ServiceSchema';
 
 const securityFaqs = [
   { question: "What is a CCTV system and how does it work?", answer: "CCTV (Closed-Circuit Television) systems record and transmit video footage to a specific, limited set of monitors. Modern IP-based CCTV allows for AI-powered analytics, remote viewing, and cloud storage." },
@@ -34,6 +37,17 @@ const securitySolutions = [
 
 export default function PhysicalSecurityPage() {
   return (
+    <>
+      <SEOHead
+        title="CCTV Installation & Access Control Kenya — Physical Security | 912"
+        description="Enterprise CCTV surveillance, biometric access control, electric fencing, and structured cabling for businesses across Kenya and Africa. Expert installation & 24/7 monitoring by 912."
+      />
+      <FAQSchema faqs={securityFaqs} id="physical-security-faq-schema" />
+      <ServiceSchema
+        name="Physical & Security Infrastructure"
+        description="Comprehensive physical security solutions including CCTV surveillance, biometric access control, electric fencing, and structured cabling for enterprises across Africa."
+        url="/services/physical-security"
+      />
     <ServiceLayout
       hero={{
         title: "Physical & Security Infrastructure",
@@ -127,6 +141,19 @@ export default function PhysicalSecurityPage() {
           { value: "24/7", label: "Monitoring" }
         ]
       }}
+      aeo={{
+        question: "Why should an enterprise choose integrated security over standalone CCTV?",
+        directAnswer: "Standalone CCTV systems only record events, whereas integrated physical security links video surveillance with biometric access control, fire alarms, and HR systems. This enables automated alerting, prevents unauthorized remote access, and eliminates ghost worker payroll fraud—creating a proactive defense rather than reactive recording.",
+        statistics: [
+          { value: "68%", label: "Faster incident response", source: "Security Industry Association (SIA)" },
+          { value: "3x", label: "Higher ROI vs standalone", source: "Enterprise Security Audit" }
+        ],
+        expertQuote: {
+          text: "The days of a guard staring at a wall of monitors are over. Modern physical security in Africa requires AI-driven object detection and multi-site remote visibility synchronized with central ERP systems.",
+          author: "Josephine Wanjiru",
+          role: "Systems Integration Specialist, 912"
+        }
+      }}
     >
       <ProjectShowcase 
         items={securitySolutions} 
@@ -140,5 +167,6 @@ export default function PhysicalSecurityPage() {
         theme="light"
       />
     </ServiceLayout>
+    </>
   );
 }

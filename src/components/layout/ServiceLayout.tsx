@@ -6,6 +6,8 @@ import { HoverBorderButton } from '@/components/ui/HoverBorderButton';
 import { Link } from 'react-router-dom';
 import { PartnershipTicker } from '@/components/ui/PartnershipTicker';
 import { LogoCloud } from '@/components/home/LogoCloud';
+import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema';
+import { AEOBlock } from '@/components/ui/AEOBlock';
 import { cn } from '@/lib/utils';
 
 interface ServiceLayoutProps {
@@ -39,6 +41,12 @@ interface ServiceLayoutProps {
     title: string;
     subtitle: string;
     stats: { value: string; label: string }[];
+  };
+  aeo?: {
+    question: string;
+    directAnswer: string;
+    statistics?: { value: string; label: string; source: string }[];
+    expertQuote?: { text: string; author: string; role: string };
   };
   children?: React.ReactNode;
   theme?: 'light' | 'dark';
@@ -155,11 +163,13 @@ export function ServiceLayout({
   process,
   advantages,
   outcomes,
+  aeo,
   children,
   theme = 'light'
 }: ServiceLayoutProps) {
   return (
     <div className={cn("pt-0", theme === 'dark' ? "bg-brand-dark text-white" : "bg-white text-brand-dark")}>
+      <BreadcrumbSchema items={hero.breadcrumbs.map((bc) => ({ name: bc.label, url: bc.href }))} />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-dark">
         {/* Professional Tech Background Elements */}
@@ -555,6 +565,21 @@ export function ServiceLayout({
           </div>
         </div>
       </section>
+
+      {/* Answer Engine Optimization (AEO) Section */}
+      {aeo && (
+        <section className="py-24 bg-white border-t border-slate-100">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="mb-12 text-center">
+                <span className="text-brand-orange uppercase text-sm font-bold tracking-widest mb-4 block">Expert Insight</span>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-brand-dark">Executive Intelligence</h2>
+              </div>
+              <AEOBlock {...aeo} />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Outcomes Section — with animated stats */}
       <section className="py-24 bg-brand-blue text-white relative overflow-hidden">

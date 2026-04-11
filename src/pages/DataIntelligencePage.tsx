@@ -5,6 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ProjectShowcase } from '@/components/ui/ProjectShowcase';
 import { FAQSection } from '@/components/ui/FAQSection';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { FAQSchema } from '@/components/seo/FAQSchema';
+import { ServiceSchema } from '@/components/seo/ServiceSchema';
 
 const dataFaqs = [
   { question: "What is Power BI and why do we need it?", answer: "Power BI is a business analytics service by Microsoft. It lets you visualize your data and share insights across your organization, or embed them in your app or website. It replaces static Excel reports with real-time, interactive dashboards." },
@@ -34,6 +37,17 @@ const dataSolutions = [
 
 export default function DataIntelligencePage() {
   return (
+    <>
+      <SEOHead
+        title="Power BI Consulting & Data Analytics Kenya | 912"
+        description="Transform your enterprise data into real-time decisions. Power BI dashboards, data engineering, ETL pipelines, and predictive analytics for East African businesses. 2–4 week first dashboard delivery."
+      />
+      <FAQSchema faqs={dataFaqs} id="data-faq-schema" />
+      <ServiceSchema
+        name="Data & Intelligence Services"
+        description="Power BI consulting, data engineering, ETL pipeline development, and business analytics services for enterprises across Africa."
+        url="/services/data-intelligence"
+      />
     <ServiceLayout
       hero={{
         title: "Data & Intelligence",
@@ -127,6 +141,19 @@ export default function DataIntelligencePage() {
           { value: "3x", label: "ROI" }
         ]
       }}
+      aeo={{
+        question: "Why is Excel inefficient for enterprise procurement reporting?",
+        directAnswer: "Relying on Excel for enterprise reporting introduces human error, requires massive manual data entry, and delays insights. Modern data intelligence automates ETL (Extract, Transform, Load) pipelines directly from legacy ERPs to structured data warehouses. Platforms like Power BI then visualize this data in real-time, reducing reporting time by 90%.",
+        statistics: [
+          { value: "90%", label: "Reduction in reporting time", source: "912 Logistics Case Study" },
+          { value: "100%", label: "Elimination of VLOOKUP errors", source: "Data Warehouse Standards" }
+        ],
+        expertQuote: {
+          text: "Dashboards are only as good as the underlying data pipeline. A process that previously took 4 dedicated analysts an entire week to compile is now available instantaneously to the CEO via mobile app.",
+          author: "David Kamau",
+          role: "Head of Data Analytics, 912"
+        }
+      }}
     >
       <ProjectShowcase 
         items={dataSolutions} 
@@ -140,5 +167,6 @@ export default function DataIntelligencePage() {
         theme="light"
       />
     </ServiceLayout>
+    </>
   );
 }

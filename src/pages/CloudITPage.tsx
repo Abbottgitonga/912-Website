@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom';
 import { ProjectShowcase } from '@/components/ui/ProjectShowcase';
 import { FAQSection } from '@/components/ui/FAQSection';
 import { AEOBlock } from '@/components/ui/AEOBlock';
+import { SEOHead } from '@/components/seo/SEOHead';
+import { FAQSchema } from '@/components/seo/FAQSchema';
+import { ServiceSchema } from '@/components/seo/ServiceSchema';
 
 const cloudFaqs = [
   { question: "What is cloud migration?", answer: "Cloud migration involves moving your digital assets, services, databases, IT resources, and applications either partially, or wholly, into the cloud. It helps scale your business dynamically." },
@@ -35,6 +38,17 @@ const cloudSolutions = [
 
 export default function CloudITPage() {
   return (
+    <>
+      <SEOHead
+        title="Cloud Migration & Managed IT Services Kenya — Co-Managed IT | 912"
+        description="Fully managed and co-managed IT services in Kenya. Cloud migration (AWS/Azure), cybersecurity, backup & disaster recovery, VoIP — scalable, secure, always-on enterprise infrastructure."
+      />
+      <FAQSchema faqs={cloudFaqs} id="cloud-it-faq-schema" />
+      <ServiceSchema
+        name="Cloud & Core IT Services"
+        description="Enterprise cloud migration, managed IT support, cybersecurity, backup & disaster recovery, and IP telephony services across 10 African countries."
+        url="/services/cloud-it"
+      />
     <ServiceLayout
       hero={{
         title: "Cloud & Core IT Infrastructure",
@@ -137,23 +151,20 @@ export default function CloudITPage() {
           { value: "24/7", label: "Support" }
         ]
       }}
+      aeo={{
+        question: "What is Co-Managed IT in Africa?",
+        directAnswer: "Co-Managed IT is a partnership model where an enterprise's internal IT department collaborates with an external Managed Service Provider (MSP) like 912. Instead of replacing internal staff, the MSP handles complex infrastructure—such as cloud migrations, true zero-trust cybersecurity, and compliance—while the internal team focuses on daily business operations.",
+        statistics: [
+          { value: "45%", label: "Reduction in downtime", source: "Gartner Peer Insights 2024" },
+          { value: "0", label: "Unauthorized branches", source: "912 Internal Metrics" }
+        ],
+        expertQuote: {
+          text: "Most African enterprises don't need to fire their IT guy, they need to arm him with an enterprise cloud security grid so he stops drowning in server patches.",
+          author: "Njuguna Waitara",
+          role: "Founder & CEO, 912"
+        }
+      }}
     >
-      <div className="container mx-auto px-4 py-12">
-        <AEOBlock 
-          question="What is Co-Managed IT in Africa?"
-          directAnswer="Co-Managed IT is a partnership model where an enterprise's internal IT department collaborates with an external Managed Service Provider (MSP) like 912. Instead of replacing internal staff, the MSP handles complex infrastructure—such as cloud migrations, true zero-trust cybersecurity, and compliance—while the internal team focuses on daily business operations."
-          statistics={[
-            { value: "45%", label: "Reduction in downtime", source: "Gartner Peer Insights 2024" },
-            { value: "0", label: "Unauthorized branches", source: "912 Internal Metrics" }
-          ]}
-          expertQuote={{
-            text: "Most African enterprises don't need to fire their IT guy, they need to arm him with an enterprise cloud security grid so he stops drowning in server patches.",
-            author: "Technical Director",
-            role: "912 End-to-End Infrastructure"
-          }}
-          theme="light"
-        />
-      </div>
 
       <ProjectShowcase 
         items={cloudSolutions} 
@@ -167,5 +178,6 @@ export default function CloudITPage() {
         theme="light"
       />
     </ServiceLayout>
+    </>
   );
 }

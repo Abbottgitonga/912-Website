@@ -5,6 +5,7 @@ import { LogoCloud } from '@/components/home/LogoCloud';
 import { AfricaMap } from '@/components/home/AfricaMap';
 import { ArrowRight } from 'lucide-react';
 import { Testimonials } from '@/components/home/Testimonials';
+import { SEOHead } from '@/components/seo/SEOHead';
 
 const timeline = [
   { year: '2013', event: 'Founded in Nairobi by Njuguna Waitara. First client: a mid-sized manufacturer who needed CCTV, cabling, and IT support — and was tired of managing three vendors.' },
@@ -28,6 +29,10 @@ const values = [
 export default function AboutPage() {
   return (
     <main className="pt-20">
+      <SEOHead
+        title="About 912 — Pan-African IT Company Founded in Nairobi, Kenya"
+        description="Nine One Two (912) was founded in Nairobi in 2013 to fix broken IT vendor fragmentation across Africa. 100+ enterprise clients, 10 countries, 14 integrated services under the One Contract Model."
+      />
       {/* Hero */}
       <section className="bg-brand-dark text-white py-32">
         <div className="container mx-auto px-4">

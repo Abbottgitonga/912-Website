@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { ScrollReveal } from '@/components/layout/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { MapPin, Phone, Mail, Clock, ArrowRight } from 'lucide-react';
+import { SEOHead } from '@/components/seo/SEOHead';
 
 export default function ContactPage() {
   useEffect(() => {
@@ -18,6 +19,10 @@ export default function ContactPage() {
 
   return (
     <main className="pt-20">
+      <SEOHead
+        title="Book a Discovery Call — IT Consulting & Infrastructure Audit Kenya | 912"
+        description="Schedule a free IT infrastructure audit with 912's Nairobi-based engineers. One call, full technology assessment. Serving enterprises across 10 African countries."
+      />
       {/* Hero */}
       <section className="bg-brand-dark text-white py-32">
         <div className="container mx-auto px-4">
