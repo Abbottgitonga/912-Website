@@ -11,29 +11,29 @@ const pillars = [
     title: "Physical & Security Infrastructure",
     description: "Cameras, fences, doors, cabling, server rooms. The hardware that protects your premises and the infrastructure that makes everything else work.",
     iconType: "security" as const,
-    path: "/services/physical-security-infrastructure",
-    image: "https://images.unsplash.com/photo-1557597774-9d2739f8f01f?auto=format&fit=crop&q=80&w=800"
+    path: "/services/physical-security",
+    image: "/images/heroes/physical-security.png"
   },
   {
     title: "Cloud & Core IT",
     description: "Cloud, security, identity, backups, telephony, day-to-day IT. The digital backbone your business runs on.",
     iconType: "cloud" as const,
-    path: "/services/cloud-core-it",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+    path: "/services/cloud-it",
+    image: "/images/heroes/cloud-it.png"
   },
   {
     title: "Applications & Software",
     description: "Custom web and mobile apps, ERP systems, SaaS platforms, process automation. Built for African operations.",
     iconType: "software" as const,
     path: "/services/applications-software",
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800"
+    image: "/images/heroes/software-dev.png"
   },
   {
     title: "Data & Intelligence",
     description: "Power BI dashboards, data warehousing, ETL pipelines. The single source of truth your leadership team needs.",
     iconType: "data" as const,
     path: "/services/data-intelligence",
-    image: "https://images.unsplash.com/photo-1551288049-bbbda50a13a9?auto=format&fit=crop&q=80&w=800"
+    image: "/images/heroes/data-intelligence.png"
   }
 ];
 
