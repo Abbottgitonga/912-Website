@@ -40,8 +40,8 @@ export function Hero() {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
       </div>
 
-      {/* Africa Map - Absolute on desktop, handled in flow for mobile later */}
-      <div className="absolute right-0 top-[15%] z-20 hidden lg:block w-[55%] xl:w-[50%] pointer-events-none opacity-90">
+      {/* Africa Map - Absolute on desktop, scaled specifically to occupy the right-hand hero space */}
+      <div className="absolute right-[-15%] top-[20%] xl:top-[25%] z-20 hidden lg:block w-[80%] xl:w-[75%] pointer-events-none opacity-90 max-w-none">
         <AfricaMap />
       </div>
 

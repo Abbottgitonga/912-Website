@@ -117,10 +117,10 @@ function NotFoundPage() {
         {/* Large 404 Display */}
         <div className="relative">
           <h1 className="select-none font-heading text-[120px] sm:text-[180px] md:text-[240px] font-black leading-none tracking-tighter text-transparent"
-              style={{
-                WebkitTextStroke: '2px rgba(27, 73, 194, 0.1)',
-                backgroundImage: 'linear-gradient(to bottom, transparent, rgba(27, 73, 194, 0.05))',
-              }}>
+            style={{
+              WebkitTextStroke: '2px rgba(27, 73, 194, 0.1)',
+              backgroundImage: 'linear-gradient(to bottom, transparent, rgba(27, 73, 194, 0.05))',
+            }}>
             404
           </h1>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -135,7 +135,7 @@ function NotFoundPage() {
 
         {/* Description */}
         <p className="text-lg md:text-xl text-slate-500 max-w-2xl leading-relaxed">
-          The page you're looking for doesn't exist or has been moved. 
+          The page you're looking for doesn't exist or has been moved.
           Let's get you back on track to finding the right solution.
         </p>
 

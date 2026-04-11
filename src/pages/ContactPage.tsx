@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ScrollReveal } from '@/components/layout/ScrollReveal';
 import { Button } from '@/components/ui/button';
 import { MapPin, Phone, Mail, Clock, ArrowRight } from 'lucide-react';
 
 export default function ContactPage() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <main className="pt-20">
       {/* Hero */}
@@ -126,13 +138,12 @@ export default function ContactPage() {
                     Prefer a direct conversation? Book a 15-minute discovery call with one of our 
                     technology consultants.
                   </p>
-                  <div className="bg-slate-100 aspect-video flex items-center justify-center border-2 border-dashed border-slate-300">
-                    <div className="text-center">
-                      <p className="text-slate-400 font-medium mb-4">[Calendly Embed Placeholder]</p>
-                      <Button className="bg-brand-orange hover:bg-brand-orange/90 text-white rounded-none min-h-[44px]">
-                        Open Scheduler
-                      </Button>
-                    </div>
+                  <div className="bg-white border border-slate-200">
+                    <div 
+                      className="calendly-inline-widget" 
+                      data-url="https://calendly.com/njuguna-912/discovery-call" 
+                      style={{ minWidth: '320px', height: '700px' }} 
+                    />
                   </div>
                 </div>
               </ScrollReveal>

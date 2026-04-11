@@ -243,11 +243,10 @@ export function AfricaMap({ variant = 'hero' }: AfricaMapProps) {
 
   return (
     <div
-      className={`relative select-none pointer-events-none ${
-        isHero
+      className={`relative select-none pointer-events-none ${isHero
           ? 'w-full aspect-square max-w-2xl mx-auto'
           : 'w-full max-w-4xl mx-auto'
-      }`}
+        }`}
       role="img"
       aria-label={`Map of Africa showing 912's operating countries: ${OPERATING_COUNTRIES.map(
         (c) => c.displayName
@@ -450,13 +449,12 @@ export function AfricaMap({ variant = 'hero' }: AfricaMapProps) {
             {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
               <div
                 key={i}
-                className={`h-1 transition-all duration-500 rounded-full ${
-                  step === i
+                className={`h-1 transition-all duration-500 rounded-full ${step === i
                     ? 'w-6 bg-brand-orange'
                     : i < step
-                    ? 'w-2 bg-brand-orange/40'
-                    : 'w-2 bg-white/20'
-                }`}
+                      ? 'w-2 bg-brand-orange/40'
+                      : 'w-2 bg-white/20'
+                  }`}
               />
             ))}
           </div>

@@ -52,11 +52,11 @@ export function Navbar() {
   }, [location]);
 
   return (
-    <header 
+    <header
       className={cn(
         "fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[95%] max-w-7xl",
-        isScrolled 
-          ? "bg-white/80 dark:bg-brand-dark/80 backdrop-blur-xl py-3 px-6 rounded-full border border-white/20 shadow-2xl" 
+        isScrolled
+          ? "bg-white/80 dark:bg-brand-dark/80 backdrop-blur-xl py-3 px-6 rounded-full border border-white/20 shadow-2xl"
           : "bg-white/40 backdrop-blur-md py-4 px-8 rounded-full border border-white/10"
       )}
     >
@@ -91,7 +91,7 @@ export function Navbar() {
                         {serviceItems.map((item) => (
                           <li key={item.href}>
                             <NavigationMenuLink asChild>
-                              <Link 
+                              <Link
                                 to={item.href}
                                 className="text-sm hover:text-brand-orange transition-colors block py-2 px-3 rounded-lg hover:bg-slate-50"
                               >
@@ -124,7 +124,7 @@ export function Navbar() {
                         {industriesItems.map((item) => (
                           <li key={item.href}>
                             <NavigationMenuLink asChild>
-                              <Link 
+                              <Link
                                 to={item.href}
                                 className="text-sm hover:text-brand-orange transition-colors block py-2 px-3 rounded-lg hover:bg-slate-50"
                               >
@@ -156,7 +156,7 @@ export function Navbar() {
                         {aboutItems.map((item) => (
                           <li key={item.href}>
                             <NavigationMenuLink asChild>
-                              <Link 
+                              <Link
                                 to={item.href}
                                 className={cn(
                                   "text-sm hover:text-brand-orange transition-colors block py-2 px-3 rounded-lg hover:bg-slate-50",
@@ -197,7 +197,7 @@ export function Navbar() {
           </nav>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className="lg:hidden p-2 text-foreground min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}

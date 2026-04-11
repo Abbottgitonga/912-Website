@@ -2,11 +2,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { HoverBorderButton } from '@/components/ui/HoverBorderButton';
+import { motion } from 'motion/react';
 
 export function Footer() {
   return (
-    <footer className="bg-brand-dark text-white pt-20 pb-10">
-      <div className="container mx-auto px-4">
+    <footer className="bg-brand-dark text-white pt-20 pb-10 relative overflow-hidden">
+      {/* Ambient Animated Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <motion.div
+          animate={{ x: [0, 150, 0], y: [0, 50, 0], scale: [1, 1.2, 1] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -top-40 -left-40 w-96 h-96 bg-brand-orange rounded-full mix-blend-screen filter blur-[120px] opacity-20"
+        />
+        <motion.div
+          animate={{ x: [0, -150, 0], y: [0, -100, 0], scale: [1, 1.5, 1] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-brand-blue rounded-full mix-blend-screen filter blur-[150px] opacity-10"
+        />
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Column */}
           <div className="space-y-6">

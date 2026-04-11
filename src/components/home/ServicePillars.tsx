@@ -66,8 +66,8 @@ export function ServicePillars() {
           {pillars.map((pillar, i) => (
             <ScrollReveal key={pillar.title} delay={i * 0.1}>
               <Link to={pillar.path} className="group block relative h-[600px] overflow-hidden bg-brand-dark">
-                <motion.img 
-                  src={pillar.image} 
+                <motion.img
+                  src={pillar.image}
                   alt=""
                   width={800}
                   height={600}
@@ -75,13 +75,13 @@ export function ServicePillars() {
                   className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay grayscale group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-700"
                   whileHover={{ scale: 1.05 }}
                 />
-                
+
                 <div className="absolute inset-0 p-12 flex flex-col justify-between z-20">
                   <div className="flex justify-between items-start">
                     <div className="text-white/30 font-heading font-black text-6xl" aria-hidden="true">0{i + 1}</div>
                     <IsometricIcon type={pillar.iconType} className="w-24 h-24 text-white opacity-40 group-hover:opacity-100 transition-opacity" />
                   </div>
-                  
+
                   <div>
                     <h3 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-white mb-6 group-hover:text-brand-orange transition-colors leading-tight uppercase">
                       {pillar.title}
