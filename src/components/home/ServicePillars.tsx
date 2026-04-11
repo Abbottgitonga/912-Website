@@ -72,7 +72,7 @@ export function ServicePillars() {
                   width={800}
                   height={600}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay grayscale group-hover:grayscale-0 group-hover:opacity-80 transition-all duration-700"
+                  className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
                   whileHover={{ scale: 1.05 }}
                 />
 
