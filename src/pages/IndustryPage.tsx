@@ -7,55 +7,71 @@ import { Button } from '@/components/ui/button';
 const industries = {
   'financial-services': {
     title: "Financial Services",
-    subtitle: "Security | Compliance | Scalability",
-    description: "Reliable IT infrastructure and cybersecurity for banks, SACCOs, and fintech platforms in East Africa.",
+    subtitle: "Forensic IT | Zero-Trust | Compliance",
+    description: "Securing the lifeblood of East African commerce. From bank-grade Active Directory hardening to forensic transaction audits that uncover multi-year fraud.",
     icon: Building2,
-    image: "https://images.unsplash.com/photo-1550565118-3a14e8d0386f?auto=format&fit=crop&q=80&w=2000",
+    image: "/images/industries/financial.png",
     challenges: [
-      "Securing sensitive customer financial data against evolving cyber threats.",
-      "Maintaining 99.9% uptime for digital banking and transaction systems.",
-      "Ensuring compliance with Central Bank and data protection regulations.",
-      "Legacy system integration with modern cloud-based fintech APIs."
-    ]
+      "Internal fraud hiding in small, fragmented rounding discrepancies.",
+      "Legacy financial databases reaching scaling limits (SAP HANA needs).",
+      "Unrotated access privileges creating backdoors for bad actors.",
+      "Strict ODPC compliance and data residency requirements."
+    ],
+    evidence: {
+      case: "Forensic discovery of a multi-year internal fraud scheme at a Nairobi financial firm, recovered through transaction log analysis.",
+      metric: "Millions Recovered"
+    }
   },
   'manufacturing-logistics': {
     title: "Manufacturing & Logistics",
-    subtitle: "Automation | Visibility | Connectivity",
-    description: "End-to-end technology solutions for factories, warehouses, and supply chain operators.",
+    subtitle: "Recovery | Automation | SAP HANA",
+    description: "Restoring operational control to the factory floor. Whether it's a 25-day total lockout rescue or a migration to dedicated bare-metal SAP hosting.",
     icon: Factory,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000",
+    image: "/images/industries/manufacturing.png",
     challenges: [
-      "Lack of real-time visibility into production line efficiency.",
-      "Unreliable connectivity in remote factory locations.",
-      "Manual inventory tracking leading to stock discrepancies.",
-      "Security of physical assets and perimeter across large sites."
-    ]
+      "Total system lockout due to unmanaged credentials and zero documentation.",
+      "Inconsistent network stability across remote regional factory sites.",
+      "Fragmented asset registries leading to hardware loss and licensing gaps.",
+      "High latency on shared cloud environments for ERP workloads."
+    ],
+    evidence: {
+      case: "Full remote recovery of a Senegal manufacturing plant after a 25-day total system lockout, including zero-to-full asset registry build.",
+      metric: "25 Days Restored"
+    }
   },
   'healthcare': {
     title: "Healthcare",
-    subtitle: "Availability | Privacy | Records",
-    description: "Digital transformation for hospitals and clinics to improve patient outcomes through technology.",
+    subtitle: "Precision | Privacy | Connectivity",
+    description: "Technology that saves lives. Built-to-last campus-wide connectivity and secure medical record systems that never go offline.",
     icon: Stethoscope,
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000",
+    image: "/images/industries/healthcare.png",
     challenges: [
-      "Fragmented patient record systems across departments.",
-      "Critical system downtime affecting emergency care delivery.",
-      "Data privacy concerns involving sensitive medical imaging.",
-      "Need for secure, high-speed campus-wide Wi-Fi for medical staff."
-    ]
+      "Fragmented patient data silos creating life-critical information delays.",
+      "Unreliable Wi-Fi connectivity in campuses preventing mobile diagnostics.",
+      "Cyber-security risks involving highly sensitive medical records.",
+      "Lack of real-time visibility into ward and equipment availability."
+    ],
+    evidence: {
+      case: "Deployment of unified campus-wide medical record infrastructure with 99.9% uptime and zero-latency access for diagnostic imaging.",
+      metric: "99.9% Uptime"
+    }
   },
   'retail-ecommerce': {
     title: "Retail & E-commerce",
-    subtitle: "Unified Commerce | Data | Experience",
-    description: "Bridging the gap between physical retail and digital storefronts with robust IT.",
+    subtitle: "Profitability | Workflow | Scale",
+    description: "Automating the path to profitability. We connect your storefront to your warehouse with data-driven precision.",
     icon: ShoppingBag,
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=2000",
+    image: "/images/industries/retail.png",
     challenges: [
-      "Disconnected online and offline inventory management systems.",
-      "Slow checkout processes during peak seasonal traffic.",
-      "Lack of data-driven insights into customer buying behavior.",
-      "Security of POS systems and online payment gateways."
-    ]
+      "Lack of real-time synchronization between sales and stock levels.",
+      "Manual process bottlenecks reducing overall operating margins.",
+      "Insecure payment gateway integrations leading to transaction drops.",
+      "Difficulty managing multi-site retail infrastructure remotely."
+    ],
+    evidence: {
+      case: "End-to-end FMCG process automation for a regional distributor, resulting in a direct 14% increase in net profitability.",
+      metric: "14% Profitability ↑"
+    }
   }
 };
 
@@ -66,7 +82,7 @@ export default function IndustryPage() {
   if (!industry) {
     return (
       <div className="pt-32 pb-20 container mx-auto px-4 min-h-[60vh]">
-        <h1 className="text-4xl font-heading font-bold mb-4 text-brand-dark transition-all">Industry Not Found</h1>
+        <h1 className="text-4xl font-heading font-bold mb-4 text-brand-dark">Industry Not Found</h1>
         <p className="text-slate-500 mb-8">We haven't built a specific case for this sector yet, but we likely still serve it.</p>
         <Button asChild variant="blue">
           <Link to="/contact">Contact us about your sector</Link>
@@ -96,52 +112,57 @@ export default function IndustryPage() {
         title: "Our Sector Solutions",
         items: [
           {
-            title: "Strategic Consulting",
-            description: "Designing roadmaps tailored to your industry's unique regulatory environment.",
-            points: ["Gap analysis", "Compliance auditing", "Budget optimization"]
+            title: "Recovery & Resilience",
+            description: "Restoring operations and building the documentation you're missing.",
+            points: ["Credential vaulting", "Complete asset auditing", "Disaster recovery testing"]
           },
           {
-            title: "Core Infrastructure",
-            description: "Building the resilient foundation your specific operations require.",
-            points: ["Industrial networking", "Secure cloud hosting", "24/7 Monitoring"]
+            title: "Performance Hosting",
+            description: "Optimized infrastructure for heavy ERP and SAP HANA workloads.",
+            points: ["Bare-metal performance", "Low-latency regional routing", "Cost optimization"]
           },
           {
-            title: "Managed Security",
-            description: "Protecting what matters most in your industry.",
-            points: ["Data encryption", "Access control", "Disaster recovery"]
+            title: "Forensic Security",
+            description: "Deep-dive security that finds what standard firewalls miss.",
+            points: ["Transaction log auditing", "Zero-trust AD architecture", "ODPC compliance"]
           }
         ]
       }}
       process={{
-        title: "Sector Implementation",
-        description: "How we deploy technology into your specific environment.",
+        title: "The 912 Sector Methodology",
+        description: "How we deploy technology into your specific industry environment.",
         steps: [
-          { title: "Audit", description: "Deep dive into existing workflows and bottlenecks." },
-          { title: "Design", description: "Architecting a solution that fits your scale." },
-          { title: "Deploy", description: "Minimal-disruption rollout with full team training." }
+          { title: "Audit", description: "Deep dive into existing workflows, hidden silos, and security bottlenecks." },
+          { title: "Rescue/Design", description: "Either restoring broken systems or architecting the ideal replacement." },
+          { title: "Manage", description: "Continuous 24/7 monitoring and strategic roadmapping under One Contract." }
         ]
       }}
       outcomes={{
         title: "Proven Results",
-        subtitle: `Enhancing ${industry.title} through 912 Precision`,
+        subtitle: industry.evidence.case,
         stats: [
-          { value: "99.9%", label: "System Uptime" },
-          { value: "100%", label: "Compliance Rate" },
-          { value: "30%", label: "Cost Efficiency" }
+          { value: industry.evidence.metric, label: "Success" },
+          { value: "100%", label: "Compliance" },
+          { value: "One", label: "Contract" }
         ]
       }}
     >
       <div className="py-24 bg-brand-dark text-white text-center">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-3xl md:text-5xl font-heading font-bold mb-8 italic">
-            "We don't just provide IT. We provide the operational stability your industry runs on."
+            "Your industry runs on technology. We ensure that technology is documented, secured, and always available."
           </h2>
-          <Button asChild variant="orange" size="lg" className="rounded-none h-16 px-12 text-lg font-bold group">
-            <Link to="/contact">
-              Discuss Your Sector Needs
-              <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild variant="orange" size="lg" className="rounded-none h-16 px-12 text-lg font-bold group">
+              <Link to="/contact">
+                Discuss Your Sector Leads
+                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="rounded-none h-16 px-12 text-lg font-bold border-white/20 hover:bg-white/10">
+              <Link to="/results">View All Case Studies</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </ServiceLayout>

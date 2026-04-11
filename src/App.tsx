@@ -2,6 +2,7 @@ import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, Link } from 'react-router-dom';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { GlobalFAQ } from '@/components/layout/GlobalFAQ';
 import { LampCTA } from '@/components/layout/LampCTA';
 import { HoverBorderButton } from '@/components/ui/HoverBorderButton';
 import { ArrowRight } from 'lucide-react';
@@ -232,6 +233,7 @@ export default function App() {
             </Routes>
           </Suspense>
         </div>
+        <GlobalFAQ />
         <LampCTA />
         <Footer />
       </div>

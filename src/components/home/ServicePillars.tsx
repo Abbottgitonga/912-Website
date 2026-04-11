@@ -78,7 +78,7 @@ export function ServicePillars() {
 
                 <div className="absolute inset-0 p-12 flex flex-col justify-between z-20">
                   <div className="flex justify-between items-start">
-                    <div className="text-white/30 font-heading font-black text-6xl" aria-hidden="true">0{i + 1}</div>
+                    <div className="text-white/60 font-heading font-black text-6xl" aria-hidden="true">0{i + 1}</div>
                     <IsometricIcon type={pillar.iconType} className="w-24 h-24 text-white opacity-40 group-hover:opacity-100 transition-opacity" />
                   </div>
 

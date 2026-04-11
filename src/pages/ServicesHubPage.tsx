@@ -82,7 +82,7 @@ export default function ServicesHubPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start border-b border-slate-200 pb-16 last:border-0">
                   <div className="lg:col-span-7">
                     <div className="flex items-center gap-4 mb-4">
-                      <span className="text-6xl font-heading font-black text-slate-100">{pillar.num}</span>
+                      <span className="text-6xl font-heading font-black text-brand-blue/20">{pillar.num}</span>
                       <pillar.icon className="w-8 h-8 text-brand-orange" />
                     </div>
                     <h3 className="text-3xl font-heading font-bold text-brand-dark mb-3">{pillar.title}</h3>
